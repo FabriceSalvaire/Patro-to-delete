@@ -1,0 +1,8 @@
+
+======
+ Line
+======
+
+.. automodule:: Patro.Geometry.Line
+   :members:
+   :show-inheritance:

@@ -1,0 +1,8 @@
+
+===========
+ Primitive
+===========
+
+.. automodule:: Patro.Geometry.Primitive
+   :members:
+   :show-inheritance:

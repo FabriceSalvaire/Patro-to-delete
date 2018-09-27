@@ -1,0 +1,1454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.1.1.2. Pattern &mdash; Patro 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../static/css/Patro.css" type="text/css" />
+  <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="7.1.2. Geometry" href="../Geometry.html" />
+    <link rel="prev" title="7.1.1.1. Measurements" href="Measurements.html" /> 
+
+  
+  <script src="../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Patro
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#what-is-patro">1.1. What is Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#what-are-the-features-of-patro">1.2. What are the Features of Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#how-is-patro-licensed">1.3. How is Patro licensed ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#going-further-with-patro">1.4. Going further with Patro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#which-platforms-are-supported-by-patro">1.5. Which platforms are supported by Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#how-to-install-patro">1.6. How to install Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../overview.html#which-version-of-python-is-required">1.7. Which version of Python is required ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news.html">2. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../news.html#v0-2017-02-16">2.1. V0 2017-02-16</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">3. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">4. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#on-windows">4.1. On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#on-linux">4.2. On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#on-osx">4.3. On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installation-from-pypi-repository">4.4. Installation from PyPi Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#install-a-more-recent-version-from-github">4.5. Install a more recent version from Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installation-from-source">4.6. Installation from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#dependencies">4.7. Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">5. User FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq.html#how-to-get-help-or-report-an-issue">5.1. How to get help or report an issue ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design-notes.html">6. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../design-notes.html#what-is-the-requirements-of-a-pattern-drafting-software">6.1. What is the requirements of a pattern drafting software ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design-notes.html#why-python-is-a-good-language-for-this-library">6.2. Why Python is a good language for this library ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design-notes.html#what-is-the-purpose-of-this-library">6.3. What is the purpose of this library ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design-notes.html#could-we-implement-a-full-software-using-python">6.4. Could we implement a full software using Python ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design-notes.html#how-to-generate-drawings-in-standard-format-like-pdf-or-svg">6.5. How to generate drawings in standard format like PDF or SVG ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../reference-manual.html">7. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Patro.html">7.1. Patro</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../FileFormat.html">7.1.1. FileFormat</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Measurements.html">7.1.1.1. Measurements</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">7.1.1.2. Pattern</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Geometry.html">7.1.2. Geometry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Geometry/Bezier.html">7.1.2.1. Bezier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Geometry/Conic.html">7.1.2.2. Conic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Geometry/Line.html">7.1.2.3. Line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Geometry/Primitive.html">7.1.2.4. Primitive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Geometry/Segment.html">7.1.2.5. Segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Geometry/Transformation.html">7.1.2.6. Transformation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Geometry/Vector.html">7.1.2.7. Vector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Graph.html">7.1.3. Graph</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Graph/DirectedAcyclicGraph.html">7.1.3.1. DirectedAcyclicGraph</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../GraphicScene.html">7.1.4. GraphicScene</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../GraphicScene/GraphicItem.html">7.1.4.1. GraphicItem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GraphicScene/Scene.html">7.1.4.2. Scene</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Logging.html">7.1.5. Logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Logging/Basic.html">7.1.5.1. Basic</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Math.html">7.1.6. Math</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Math/Functions.html">7.1.6.1. Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Painter.html">7.1.7. Painter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Painter/Painter.html">7.1.7.1. Painter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Painter/Paper.html">7.1.7.2. Paper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Painter/TexPainter.html">7.1.7.3. TexPainter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Pattern.html">7.1.8. Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Calculation.html">7.1.8.1. Calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Calculator.html">7.1.8.2. Calculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Contour.html">7.1.8.3. Contour</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Measurement.html">7.1.8.4. Measurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Pattern.html">7.1.8.5. Pattern</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../TeX.html">7.1.9. TeX</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../TeX/Buffer.html">7.1.9.1. Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../TeX/Document.html">7.1.9.2. Document</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../TeX/Environment.html">7.1.9.3. Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../TeX/Tikz.html">7.1.9.4. Tikz</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tools.html">7.1.10. Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tools/IterTools.html">7.1.10.1. IterTools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Xml.html">7.1.11. Xml</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Xml/Objectivity.html">7.1.11.1. Objectivity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Xml/XmlFile.html">7.1.11.2. XmlFile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference-manual.html#indexes">7.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">8. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../development.html#how-you-can-help">8.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../development.html#contributors">8.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how-to-refer.html">9. How to Refer to Patro ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../donate.html">10. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../related-projects.html">11. Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bibliography.html">12. Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Patro</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../reference-manual.html">7. API Documentation</a> &raquo;</li>
+        
+          <li><a href="../../Patro.html">7.1. Patro</a> &raquo;</li>
+        
+          <li><a href="../FileFormat.html">7.1.1. FileFormat</a> &raquo;</li>
+        
+      <li>7.1.1.2. Pattern</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api/Patro/FileFormat/Pattern.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Patro.FileFormat.Pattern">
+<span id="pattern"></span><h1>7.1.1.2. Pattern<a class="headerlink" href="#module-Patro.FileFormat.Pattern" title="Permalink to this headline">¶</a></h1>
+<p>This module implements the val XML file format and is designed so as to decouple the XML details
+and the calculation API.</p>
+<p>The purpose of each XmlObjectAdaptator sub-classes is to serve as a bidirectional adaptor between
+the XML format and the API.</p>
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">AlongLinePoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#AlongLinePoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Patro.FileFormat.Pattern.PointLinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointLinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.FirstSecondPointMixin" title="Patro.FileFormat.Pattern.FirstSecondPointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FirstSecondPointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.LengthMixin" title="Patro.FileFormat.Pattern.LengthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LengthMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.first_point">
+<code class="descname">first_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.first_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.length">
+<code class="descname">length</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.AlongLinePoint.second_point">
+<code class="descname">second_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.AlongLinePoint.second_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.AngleMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">AngleMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#AngleMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.AngleMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.BasePointMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">BasePointMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#BasePointMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.BasePointMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">BissectorPoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#BissectorPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Patro.FileFormat.Pattern.PointLinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointLinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.FirstSecondThirdPointMixin" title="Patro.FileFormat.Pattern.FirstSecondThirdPointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FirstSecondThirdPointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.LengthMixin" title="Patro.FileFormat.Pattern.LengthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LengthMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.first_point">
+<code class="descname">first_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.first_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.length">
+<code class="descname">length</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.second_point">
+<code class="descname">second_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.second_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.BissectorPoint.third_point">
+<code class="descname">third_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.BissectorPoint.third_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.CalculationDispatcher">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">CalculationDispatcher</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationDispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationDispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.CalculationDispatcher.from_calculation">
+<code class="descname">from_calculation</code><span class="sig-paren">(</span><em>calculation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationDispatcher.from_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationDispatcher.from_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.CalculationDispatcher.from_xml">
+<code class="descname">from_xml</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationDispatcher.from_xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationDispatcher.from_xml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.CalculationMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">CalculationMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.CalculationMixin.call_calculation_function">
+<code class="descname">call_calculation_function</code><span class="sig-paren">(</span><em>pattern</em>, <em>kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationMixin.call_calculation_function"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationMixin.call_calculation_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Patro.FileFormat.Pattern.CalculationMixin.from_calculation">
+<em class="property">classmethod </em><code class="descname">from_calculation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationMixin.from_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationMixin.from_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.CalculationMixin.to_calculation">
+<code class="descname">to_calculation</code><span class="sig-paren">(</span><em>pattern</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationMixin.to_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationMixin.to_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.CalculationTypeMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">CalculationTypeMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationTypeMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationTypeMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.CalculationMixin" title="Patro.FileFormat.Pattern.CalculationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.CalculationMixin</span></code></a></p>
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.CalculationTypeMixin.to_xml">
+<code class="descname">to_xml</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#CalculationTypeMixin.to_xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.CalculationTypeMixin.to_xml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Detail">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Detail</code><span class="sig-paren">(</span><em>modeling</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Detail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.MxMyMixin" title="Patro.FileFormat.Pattern.MxMyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.MxMyMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.Detail.append_node">
+<code class="descname">append_node</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Detail.append_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.append_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.forbidFlipping">
+<code class="descname">forbidFlipping</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.forbidFlipping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.inLayout">
+<code class="descname">inLayout</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.inLayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.Detail.iter_on_nodes">
+<code class="descname">iter_on_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Detail.iter_on_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.iter_on_nodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.seamAllowance">
+<code class="descname">seamAllowance</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.seamAllowance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.united">
+<code class="descname">united</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.united" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.version">
+<code class="descname">version</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Detail.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Detail.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.DetailData">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">DetailData</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#DetailData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.HeightWidthMixin" title="Patro.FileFormat.Pattern.HeightWidthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.HeightWidthMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.MxMyMixin" title="Patro.FileFormat.Pattern.MxMyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.MxMyMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.FontSizeMixin" title="Patro.FileFormat.Pattern.FontSizeMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FontSizeMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.VisibleRotationMixin" title="Patro.FileFormat.Pattern.VisibleRotationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.VisibleRotationMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.fontSize">
+<code class="descname">fontSize</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.fontSize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.letter">
+<code class="descname">letter</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.letter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.rotation">
+<code class="descname">rotation</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.rotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.visible">
+<code class="descname">visible</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailData.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailData.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.DetailDispatcher">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">DetailDispatcher</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#DetailDispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailDispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.Dispatcher" title="Patro.FileFormat.Pattern.Dispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Dispatcher</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.DetailGrainline">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">DetailGrainline</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#DetailGrainline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailGrainline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.MxMyMixin" title="Patro.FileFormat.Pattern.MxMyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.MxMyMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.VisibleRotationMixin" title="Patro.FileFormat.Pattern.VisibleRotationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.VisibleRotationMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailGrainline.arrows">
+<code class="descname">arrows</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailGrainline.arrows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailGrainline.length">
+<code class="descname">length</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailGrainline.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailGrainline.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailGrainline.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailGrainline.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailGrainline.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailGrainline.rotation">
+<code class="descname">rotation</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailGrainline.rotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailGrainline.visible">
+<code class="descname">visible</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailGrainline.visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.DetailNode">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">DetailNode</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#DetailNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailNode.object_id">
+<code class="descname">object_id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailNode.object_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailNode.reverse">
+<code class="descname">reverse</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailNode.reverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailNode.type">
+<code class="descname">type</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailNode.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">DetailPatternInfo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#DetailPatternInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.HeightWidthMixin" title="Patro.FileFormat.Pattern.HeightWidthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.HeightWidthMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.MxMyMixin" title="Patro.FileFormat.Pattern.MxMyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.MxMyMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.FontSizeMixin" title="Patro.FileFormat.Pattern.FontSizeMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FontSizeMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.VisibleRotationMixin" title="Patro.FileFormat.Pattern.VisibleRotationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.VisibleRotationMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo.fontSize">
+<code class="descname">fontSize</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo.fontSize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo.rotation">
+<code class="descname">rotation</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo.rotation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo.visible">
+<code class="descname">visible</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo.visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.DetailPatternInfo.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Pattern.DetailPatternInfo.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Dispatcher">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Dispatcher</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Dispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.Dispatcher.from_xml">
+<code class="descname">from_xml</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Dispatcher.from_xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Dispatcher.from_xml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">EndLinePoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#EndLinePoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Patro.FileFormat.Pattern.PointLinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointLinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.BasePointMixin" title="Patro.FileFormat.Pattern.BasePointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.BasePointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.LengthAngleMixin" title="Patro.FileFormat.Pattern.LengthAngleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LengthAngleMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.angle">
+<code class="descname">angle</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.base_point">
+<code class="descname">base_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.base_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.length">
+<code class="descname">length</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.EndLinePoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.EndLinePoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.FirstSecondPointMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">FirstSecondPointMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#FirstSecondPointMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.FirstSecondPointMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.FirstSecondThirdPointMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">FirstSecondThirdPointMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#FirstSecondThirdPointMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.FirstSecondThirdPointMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.FirstSecondPointMixin" title="Patro.FileFormat.Pattern.FirstSecondPointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FirstSecondPointMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.FontSizeMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">FontSizeMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#FontSizeMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.FontSizeMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.HeightPoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">HeightPoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#HeightPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Patro.FileFormat.Pattern.PointLinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointLinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.BasePointMixin" title="Patro.FileFormat.Pattern.BasePointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.BasePointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.Line1Mixin" title="Patro.FileFormat.Pattern.Line1Mixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Line1Mixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.base_point">
+<code class="descname">base_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.base_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.point1_line1">
+<code class="descname">point1_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.point1_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.HeightPoint.point2_line1">
+<code class="descname">point2_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightPoint.point2_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.HeightWidthMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">HeightWidthMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#HeightWidthMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.HeightWidthMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.LengthAngleMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">LengthAngleMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#LengthAngleMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.LengthAngleMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.LengthMixin" title="Patro.FileFormat.Pattern.LengthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LengthMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.AngleMixin" title="Patro.FileFormat.Pattern.AngleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.AngleMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.LengthMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">LengthMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#LengthMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.LengthMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Line">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Line</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.CalculationMixin" title="Patro.FileFormat.Pattern.CalculationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.CalculationMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.LinePropertiesMixin" title="Patro.FileFormat.Pattern.LinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.FirstSecondPointMixin" title="Patro.FileFormat.Pattern.FirstSecondPointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FirstSecondPointMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Line.first_point">
+<code class="descname">first_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Line.first_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Patro.FileFormat.Pattern.Line.from_calculation">
+<em class="property">classmethod </em><code class="descname">from_calculation</code><span class="sig-paren">(</span><em>calculation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Line.from_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Line.from_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Line.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Line.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Line.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Line.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Line.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Line.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.Line.second_point">
+<code class="descname">second_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.Line.second_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.Line.to_calculation">
+<code class="descname">to_calculation</code><span class="sig-paren">(</span><em>pattern</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Line.to_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Line.to_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Line12Mixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Line12Mixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Line12Mixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Line12Mixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.Line1Mixin" title="Patro.FileFormat.Pattern.Line1Mixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Line1Mixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.Line2Mixin" title="Patro.FileFormat.Pattern.Line2Mixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Line2Mixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Line1Mixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Line1Mixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Line1Mixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Line1Mixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Line2Mixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Line2Mixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Line2Mixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Line2Mixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">LineIntersectAxisPoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#LineIntersectAxisPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Patro.FileFormat.Pattern.PointLinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointLinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.BasePointMixin" title="Patro.FileFormat.Pattern.BasePointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.BasePointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.Line1Mixin" title="Patro.FileFormat.Pattern.Line1Mixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Line1Mixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.AngleMixin" title="Patro.FileFormat.Pattern.AngleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.AngleMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.angle">
+<code class="descname">angle</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.base_point">
+<code class="descname">base_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.base_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.point1_line1">
+<code class="descname">point1_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.point1_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectAxisPoint.point2_line1">
+<code class="descname">point2_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectAxisPoint.point2_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">LineIntersectPoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#LineIntersectPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointMixin" title="Patro.FileFormat.Pattern.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.Line12Mixin" title="Patro.FileFormat.Pattern.Line12Mixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Line12Mixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.point1_line1">
+<code class="descname">point1_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.point1_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.point1_line2">
+<code class="descname">point1_line2</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.point1_line2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.point2_line1">
+<code class="descname">point2_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.point2_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.LineIntersectPoint.point2_line2">
+<code class="descname">point2_line2</code><a class="headerlink" href="#Patro.FileFormat.Pattern.LineIntersectPoint.point2_line2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.LinePropertiesMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">LinePropertiesMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#LinePropertiesMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.LinePropertiesMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Modeling">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Modeling</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Modeling"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Modeling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.Modeling.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Modeling.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Modeling.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.ModelingDispatcher">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">ModelingDispatcher</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ModelingDispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingDispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.Dispatcher" title="Patro.FileFormat.Pattern.Dispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Dispatcher</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.ModelingItemMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">ModelingItemMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ModelingItemMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingItemMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.ModelingPoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">ModelingPoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ModelingPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.ModelingItemMixin" title="Patro.FileFormat.Pattern.ModelingItemMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.ModelingItemMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.MxMyMixin" title="Patro.FileFormat.Pattern.MxMyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.MxMyMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingPoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingPoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingPoint.in_use">
+<code class="descname">in_use</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingPoint.in_use" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingPoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingPoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingPoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingPoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingPoint.object_id">
+<code class="descname">object_id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingPoint.object_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingPoint.type">
+<code class="descname">type</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingPoint.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.ModelingSpline">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">ModelingSpline</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ModelingSpline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.ModelingItemMixin" title="Patro.FileFormat.Pattern.ModelingItemMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.ModelingItemMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingSpline.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingSpline.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingSpline.in_use">
+<code class="descname">in_use</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingSpline.in_use" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingSpline.object_id">
+<code class="descname">object_id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingSpline.object_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ModelingSpline.type">
+<code class="descname">type</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ModelingSpline.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.MxMyMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">MxMyMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#MxMyMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.MxMyMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.NormalPoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">NormalPoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#NormalPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Patro.FileFormat.Pattern.PointLinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointLinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.FirstSecondPointMixin" title="Patro.FileFormat.Pattern.FirstSecondPointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FirstSecondPointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.LengthAngleMixin" title="Patro.FileFormat.Pattern.LengthAngleMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LengthAngleMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.angle">
+<code class="descname">angle</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.first_point">
+<code class="descname">first_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.first_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.length">
+<code class="descname">length</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.NormalPoint.second_point">
+<code class="descname">second_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.NormalPoint.second_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Point">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Point</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Point"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.PointLinePropertiesMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">PointLinePropertiesMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#PointLinePropertiesMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointMixin" title="Patro.FileFormat.Pattern.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.LinePropertiesMixin" title="Patro.FileFormat.Pattern.LinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LinePropertiesMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.PointMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">PointMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#PointMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.PointMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.CalculationTypeMixin" title="Patro.FileFormat.Pattern.CalculationTypeMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.CalculationTypeMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.MxMyMixin" title="Patro.FileFormat.Pattern.MxMyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.MxMyMixin</span></code></a></p>
+<dl class="classmethod">
+<dt id="Patro.FileFormat.Pattern.PointMixin.from_calculation">
+<em class="property">classmethod </em><code class="descname">from_calculation</code><span class="sig-paren">(</span><em>calculation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#PointMixin.from_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.PointMixin.from_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.PointMixin.to_calculation">
+<code class="descname">to_calculation</code><span class="sig-paren">(</span><em>pattern</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#PointMixin.to_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.PointMixin.to_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.PointOfIntersection">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">PointOfIntersection</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#PointOfIntersection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.PointOfIntersection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointMixin" title="Patro.FileFormat.Pattern.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.FirstSecondPointMixin" title="Patro.FileFormat.Pattern.FirstSecondPointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.FirstSecondPointMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.PointOfIntersection.first_point">
+<code class="descname">first_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.PointOfIntersection.first_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.PointOfIntersection.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.PointOfIntersection.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.PointOfIntersection.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.PointOfIntersection.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.PointOfIntersection.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.PointOfIntersection.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.PointOfIntersection.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.PointOfIntersection.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.PointOfIntersection.second_point">
+<code class="descname">second_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.PointOfIntersection.second_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">ShoulderPoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ShoulderPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointLinePropertiesMixin" title="Patro.FileFormat.Pattern.PointLinePropertiesMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointLinePropertiesMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.Line1Mixin" title="Patro.FileFormat.Pattern.Line1Mixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.Line1Mixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.LengthMixin" title="Patro.FileFormat.Pattern.LengthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.LengthMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.length">
+<code class="descname">length</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.line_style">
+<code class="descname">line_style</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.line_style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.point1_line1">
+<code class="descname">point1_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.point1_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.point2_line1">
+<code class="descname">point2_line1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.point2_line1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ShoulderPoint.shoulder_point">
+<code class="descname">shoulder_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ShoulderPoint.shoulder_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">SimpleInteractiveSpline</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#SimpleInteractiveSpline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.SplineMixin" title="Patro.FileFormat.Pattern.SplineMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.SplineMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.angle1">
+<code class="descname">angle1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.angle1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.angle2">
+<code class="descname">angle2</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.angle2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.first_point">
+<code class="descname">first_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.first_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.from_calculation">
+<em class="property">classmethod </em><code class="descname">from_calculation</code><span class="sig-paren">(</span><em>calculation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#SimpleInteractiveSpline.from_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.from_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.length1">
+<code class="descname">length1</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.length1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.length2">
+<code class="descname">length2</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.length2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.line_color">
+<code class="descname">line_color</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.line_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.second_point">
+<code class="descname">second_point</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.second_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.SimpleInteractiveSpline.to_calculation">
+<code class="descname">to_calculation</code><span class="sig-paren">(</span><em>pattern</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#SimpleInteractiveSpline.to_calculation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.SimpleInteractiveSpline.to_calculation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.SinglePoint">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">SinglePoint</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#SinglePoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.SinglePoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.PointMixin" title="Patro.FileFormat.Pattern.PointMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.PointMixin</span></code></a>, <a class="reference internal" href="#Patro.FileFormat.Pattern.XyMixin" title="Patro.FileFormat.Pattern.XyMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.XyMixin</span></code></a>, <a class="reference internal" href="../Xml/Objectivity.html#Patro.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SinglePoint.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SinglePoint.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SinglePoint.mx">
+<code class="descname">mx</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SinglePoint.mx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SinglePoint.my">
+<code class="descname">my</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SinglePoint.my" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SinglePoint.name">
+<code class="descname">name</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SinglePoint.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SinglePoint.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SinglePoint.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.SinglePoint.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Pattern.SinglePoint.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.Spline">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">Spline</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#Spline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.Spline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.SplineMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">SplineMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#SplineMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.SplineMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Pattern.CalculationTypeMixin" title="Patro.FileFormat.Pattern.CalculationTypeMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Pattern.CalculationTypeMixin</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.ValFile">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">ValFile</code><span class="sig-paren">(</span><em>path=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ValFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ValFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../Xml/XmlFile.html#Patro.Xml.XmlFile.XmlFileMixin" title="Patro.Xml.XmlFile.XmlFileMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Xml.XmlFile.XmlFileMixin</span></code></a></p>
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.ValFile.Write">
+<code class="descname">Write</code><span class="sig-paren">(</span><em>path</em>, <em>vit_file</em>, <em>pattern</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ValFile.Write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ValFile.Write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ValFile.measurements">
+<code class="descname">measurements</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ValFile.measurements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Pattern.ValFile.pattern">
+<code class="descname">pattern</code><a class="headerlink" href="#Patro.FileFormat.Pattern.ValFile.pattern" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.FileFormat.Pattern.ValFile.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>path=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#ValFile.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.ValFile.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.VisibleRotationMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">VisibleRotationMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#VisibleRotationMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.VisibleRotationMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Pattern.XyMixin">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Pattern.</code><code class="descname">XyMixin</code><a class="reference internal" href="../../../_modules/Patro/FileFormat/Pattern.html#XyMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Pattern.XyMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Geometry.html" class="btn btn-neutral float-right" title="7.1.2. Geometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Measurements.html" class="btn btn-neutral" title="7.1.1.1. Measurements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Fabrice Salvaire.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.3.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../../static/getthecode.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

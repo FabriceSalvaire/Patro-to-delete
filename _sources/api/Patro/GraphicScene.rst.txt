@@ -1,0 +1,12 @@
+
+==============
+ GraphicScene
+==============
+
+.. toctree::
+    GraphicScene/GraphicItem
+    GraphicScene/Scene
+
+.. automodule:: Patro.GraphicScene
+   :members:
+   :show-inheritance:

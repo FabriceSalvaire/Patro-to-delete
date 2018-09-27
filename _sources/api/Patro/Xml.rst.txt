@@ -1,0 +1,12 @@
+
+=====
+ Xml
+=====
+
+.. toctree::
+    Xml/Objectivity
+    Xml/XmlFile
+
+.. automodule:: Patro.Xml
+   :members:
+   :show-inheritance:

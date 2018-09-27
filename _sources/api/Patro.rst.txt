@@ -1,0 +1,21 @@
+
+=======
+ Patro
+=======
+
+.. toctree::
+    Patro/FileFormat
+    Patro/Geometry
+    Patro/Graph
+    Patro/GraphicScene
+    Patro/Logging
+    Patro/Math
+    Patro/Painter
+    Patro/Pattern
+    Patro/TeX
+    Patro/Tools
+    Patro/Xml
+
+.. automodule:: Patro
+   :members:
+   :show-inheritance:

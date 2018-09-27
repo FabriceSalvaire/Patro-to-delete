@@ -1,0 +1,8 @@
+
+=============
+ Objectivity
+=============
+
+.. automodule:: Patro.Xml.Objectivity
+   :members:
+   :show-inheritance:

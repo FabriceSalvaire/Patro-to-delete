@@ -1,0 +1,15 @@
+
+=========
+ Pattern
+=========
+
+.. toctree::
+    Pattern/Calculation
+    Pattern/Calculator
+    Pattern/Contour
+    Pattern/Measurement
+    Pattern/Pattern
+
+.. automodule:: Patro.Pattern
+   :members:
+   :show-inheritance:

@@ -1,0 +1,11 @@
+
+=======
+ Graph
+=======
+
+.. toctree::
+    Graph/DirectedAcyclicGraph
+
+.. automodule:: Patro.Graph
+   :members:
+   :show-inheritance:

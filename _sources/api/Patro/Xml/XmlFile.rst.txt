@@ -1,0 +1,8 @@
+
+=========
+ XmlFile
+=========
+
+.. automodule:: Patro.Xml.XmlFile
+   :members:
+   :show-inheritance:

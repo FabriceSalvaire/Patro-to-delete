@@ -1,0 +1,8 @@
+
+=======
+ Conic
+=======
+
+.. automodule:: Patro.Geometry.Conic
+   :members:
+   :show-inheritance:

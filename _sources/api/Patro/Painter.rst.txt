@@ -1,0 +1,13 @@
+
+=========
+ Painter
+=========
+
+.. toctree::
+    Painter/Painter
+    Painter/Paper
+    Painter/TexPainter
+
+.. automodule:: Patro.Painter
+   :members:
+   :show-inheritance:

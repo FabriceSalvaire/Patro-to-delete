@@ -1,0 +1,11 @@
+
+=======
+ Tools
+=======
+
+.. toctree::
+    Tools/IterTools
+
+.. automodule:: Patro.Tools
+   :members:
+   :show-inheritance:

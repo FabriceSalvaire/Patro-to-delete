@@ -1,0 +1,12 @@
+
+============
+ FileFormat
+============
+
+.. toctree::
+    FileFormat/Measurements
+    FileFormat/Pattern
+
+.. automodule:: Patro.FileFormat
+   :members:
+   :show-inheritance:

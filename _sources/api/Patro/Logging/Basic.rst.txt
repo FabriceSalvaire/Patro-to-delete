@@ -1,0 +1,8 @@
+
+=======
+ Basic
+=======
+
+.. automodule:: Patro.Logging.Basic
+   :members:
+   :show-inheritance:

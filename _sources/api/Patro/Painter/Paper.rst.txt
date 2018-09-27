@@ -1,0 +1,8 @@
+
+=======
+ Paper
+=======
+
+.. automodule:: Patro.Painter.Paper
+   :members:
+   :show-inheritance:
