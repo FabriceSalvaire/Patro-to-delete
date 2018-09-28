@@ -1,0 +1,17 @@
+
+========
+ Common
+========
+
+.. toctree::
+    Common/Datetime
+    Common/Graph
+    Common/IterTools
+    Common/Logging
+    Common/Math
+    Common/Path
+    Common/Xml
+
+.. automodule:: Patro.Common
+   :members:
+   :show-inheritance:

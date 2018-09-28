@@ -4,8 +4,7 @@
 ============
 
 .. toctree::
-    FileFormat/Measurements
-    FileFormat/Pattern
+    FileFormat/Valentina
 
 .. automodule:: Patro.FileFormat
    :members:

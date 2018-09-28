@@ -4,17 +4,12 @@
 =======
 
 .. toctree::
+    Patro/Common
+    Patro/Config
     Patro/FileFormat
-    Patro/Geometry
-    Patro/Graph
-    Patro/GraphicScene
-    Patro/Logging
-    Patro/Math
-    Patro/Painter
+    Patro/GeometryEngine
+    Patro/GraphicEngine
     Patro/Pattern
-    Patro/TeX
-    Patro/Tools
-    Patro/Xml
 
 .. automodule:: Patro
    :members:

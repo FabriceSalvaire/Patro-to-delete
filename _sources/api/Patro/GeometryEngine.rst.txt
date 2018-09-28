@@ -1,0 +1,20 @@
+
+================
+ GeometryEngine
+================
+
+.. toctree::
+    GeometryEngine/Bezier
+    GeometryEngine/BoundingBox
+    GeometryEngine/Conic
+    GeometryEngine/Interpolation
+    GeometryEngine/Line
+    GeometryEngine/Primitive
+    GeometryEngine/Segment
+    GeometryEngine/Transformation
+    GeometryEngine/Triangle
+    GeometryEngine/Vector
+
+.. automodule:: Patro.GeometryEngine
+   :members:
+   :show-inheritance:

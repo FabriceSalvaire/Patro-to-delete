@@ -9,6 +9,7 @@
     Pattern/Contour
     Pattern/Measurement
     Pattern/Pattern
+    Pattern/PersonalData
 
 .. automodule:: Patro.Pattern
    :members:
