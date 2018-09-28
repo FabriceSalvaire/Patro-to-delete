@@ -1,135 +1,77 @@
+.. include:: abbreviation.txt
+
+.. _features-page:
+
 ==========
  Features
 ==========
 
-h2. Geometry Engine
+Patro implements several components:
 
-h3. Vector
+* a 2D Geometry Engine
+* a Pattern Engine
+* a Graphic Engine to export drawing to screen display, SVG and PDF file
+* a submodule to read/write SVG file
+* import/export of the |Valentina|_ file format
+* import of SVG pattern (as well as PDF using a conversion tools like |Inkscape|_)
+* digitalisation of patterns acquired with a camera **ACTUALLY NOT RELEASED WITH OPEN SOURCE LICENCE**
 
-* dimension: 2D
-* type: int, float
-* normalisation
-* homogeneous coordinate (x, y, w)
-* math operations: + - * /
-* equality test: == !=
-* magnitude
-* angle, tan, cos, sin
-* rotation, normal, parity
-* dot, cross
-* geometric tests: parallel, orthogonal
-* projection
+.. note:: Patro is just a core engine actually. It doesn't implement a GUI similar to |Valentina|_.
 
-h3. Transformation
+.. note:: Patro doesn't implement 3D feature actually, like automatic clothe fitting on avatar and tension map.
 
-* identity
-* rotation, rotation at
-* scale
-* parity, x/y reflection
-* translation
-* composition
+Geometry Engine
+===============
 
-h3. Line
+The geometry engine implements:
 
-* dimension: 2D
-* interpolation
-* geometric tests: parallel, orthogonal
-* shifted parallel line
-* orthogonal line
-* line intersection
-* projection of a point
-* distance to line
+* 2D vector and usual transformations
+* usual 2D primitives:
 
-h3. Segment
+ * point, segment, line
+ * triangle, rectangle, polygon
+ * circle and conic
+ * quadratic and cubic Bézier curve
 
-* dimension: 2D
-* length
-* middle
-* interpolation
-* segment intersection test
+* perimeter and area
+* primitive intersection
+* thanks to |Sympy|_, Patro could implement symbolic computations when it is feasible
 
-h3. Triangle
+Pattern Engine
+==============
 
-* triangle orientation defined by three points : CW, CCW, degenerated
+Graphic Engine
+==============
 
-h3. Bezier Curve
+* show drawing on screen with : |Matplotlib|_
+* export drawing to : PDF, SVG, LaTeX Tikz
+* export tiled pattern on A4 sheets : PDF, LaTeX Tikz
+* **DXF is not yet supported**
+* PDF export is implemented with the help of the |Reportlab|_ package
 
-h4. Quadratic Bezier Curve (defined by 3 points)
+Pattern Format Support
+======================
 
-* dimension: 2D
-* bounding box
-* length
-* interpolation
-* split
-* tangent and normal at extremity
-* tangent at t
+* |Valentina|_ format: read/write *.val* and *.vit* file, but partially implemented, cf. supra for details
+* import pattern from SVG
+* **DXF is not yet supported**
 
-h4. Cubic Bezier Curve (defined by 4 points)
+.. note:: PDF and SVG format are convertible to each other without data loss
+          (font handling require more attention).
 
-* dimension: 2D
-* bounding box
-* length
-* interpolation
-* split
-* tangent extremity
-* tangent at t
+.. note:: The |Inkscape|_ free software is able to import a lot of file formats like PDF, DXF and to save it to SVG.
 
-h3. Circle
+Pattern Format Compatibility
+----------------------------
 
-* dimension: 2D
+For more details on pattern format support, see :
 
-h3. Conic Curve
+.. toctree::
+  :maxdepth: 1
 
-* dimension: 2D
-* eccentricity
-* matrix
+  valentina-compatibility/index.rst
 
-h2. Pattern Engine
+Digitalisation
+==============
 
-See in Valentina source code
-* src/libs/ifc/schema/pattern/v0.6.2.xsd
-* src/libs/ifc/xml/vpatternconverter.cpp
-Notice XSD is not sufficient, there is no complete documentation of the Valentina format.
-
-| point/alongLine                  | Y | Construct a point from two points defining a direction and a length |
-| point/bisector                   | N |
-| point/curveIntersectAxis         | N |
-| point/cutArc                     | N |
-| point/cutSpline                  | N |
-| point/cutSplinePath              | N |
-| point/endLine                    | Y | Construct a point from a base point and a vector defined by an angle and a length |
-| point/height                     | N |
-| point/lineIntersect              | Y | Construct a point from the intersection of two segments defined by four points |
-| point/lineIntersectAxis          | N |
-| point/normal                     | Y | Construct a point at a distance of the first point on the rotated normal of a line defined by two points |
-| point/pointFromArcAndTangent     | N |
-| point/pointFromCircleAndTangent  | N |
-| point/pointOfContact             | N |
-| point/pointOfIntersection        | Y | Construct a point from the x coordinate of a fist point and the y coordinate of a second point |
-| point/pointOfIntersectionArcs    | N |
-| point/pointOfIntersectionCircles | N |
-| point/pointOfIntersectionCurves  | N |
-| point/shoulder                   | N |
-| point/single                     | Y | Construct a point from coordinate |
-| point/triangle                   | N |
-| point/trueDarts                  | N |
-|                                  |   |
-| line                             | Y | Construct a line defined by two points |
-|                                  |   |
-| spline/cubicBezier               | N |
-| spline/cubicBezierPath           | N |
-| spline/pathInteractive           | N |
-| spline/simpleInteractive         | Y | Construct a quadratic Bezier curve from two extremity points and two control points |
-|                                  |   |
-| arc/arcWithLength                | N |
-| arc/simple                       | N |
-|                                  |   |
-| elArc/simple                     | N |
-|                                  |   |
-| operation/flippingByAxis         | N |
-| operation/flippingByLine         | N |
-| operation/moving                 | N |
-| operation/rotation               | N |
-
-h2. Graphic Engine
-
-h3. File Formats
+* digitalise pattern acquired with a camera **ACTUALLY NOT RELEASED WITH OPEN SOURCE LICENCE**
