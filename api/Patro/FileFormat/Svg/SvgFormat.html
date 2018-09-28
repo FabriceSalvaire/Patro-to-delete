@@ -1,0 +1,1399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9.1.3.1.2. SvgFormat &mdash; Patro 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../static/css/Patro.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="9.1.3.2. Valentina" href="../Valentina.html" />
+    <link rel="prev" title="9.1.3.1.1. SvgFile" href="SvgFile.html" /> 
+
+  
+  <script src="../../../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Patro
+          
+
+          
+            
+            <img src="../../../../static/logo-64.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#what-is-patro">1.1. What is Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#what-is-the-purpose-of-this-library">1.2. What is the purpose of this library ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#what-are-the-features-of-patro">1.3. What are the Features of Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-is-patro-licensed">1.4. How is Patro licensed ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#going-further-with-patro">1.5. Going further with Patro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-platforms-are-supported-by-patro">1.6. Which platforms are supported by Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#how-to-install-patro">1.7. How to install Patro ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../overview.html#which-version-of-python-is-required">1.8. Which version of Python is required ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../features-all.html">2. Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../features-all.html#geometry-engine">2.1. Geometry Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../features-all.html#pattern-engine">2.2. Pattern Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../features-all.html#graphic-engine">2.3. Graphic Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../features-all.html#pattern-format-support">2.4. Pattern Format Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../features-all.html#pattern-format-compatibility">2.4.1. Pattern Format Compatibility</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../valentina-compatibility/index.html">2.4.1.1. Valentina Compatibility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../features-all.html#digitalisation">2.5. Digitalisation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../news.html">3. News</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../news.html#v0-2017-02-16">3.1. V0 2017-02-16</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roadmap.html">4. Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">5. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-windows">5.1. On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-linux">5.2. On Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#on-osx">5.3. On OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-pypi-repository">5.4. Installation from PyPi Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#install-a-more-recent-version-from-github">5.5. Install a more recent version from Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#installation-from-source">5.6. Installation from Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../installation.html#dependencies">5.7. Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">7. User FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../faq.html#how-to-get-help-or-report-an-issue">7.1. How to get help or report an issue ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design-notes.html">8. Design Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#what-is-my-opinion-on-valentina-seamly2d">8.1. What is my opinion on Valentina / Seamly2D ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#can-we-implement-such-a-tool-as-a-plugin-of-another-software">8.2. Can we implement such a tool as a plugin of another software ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#what-is-the-requirements-of-a-pattern-drafting-software">8.3. What is the requirements of a pattern drafting software ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#why-python-is-a-good-language-for-this-library">8.4. Why Python is a good language for this library ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#could-we-implement-a-full-software-using-python">8.5. Could we implement a full software using Python ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#how-to-generate-drawings-in-standard-format-like-pdf-or-svg">8.6. How to generate drawings in standard format like PDF or SVG ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../design-notes.html#what-is-the-requirements-of-a-geometric-engine">8.7. What is the requirements of a geometric engine ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../reference-manual.html">9. API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Patro.html">9.1. Patro</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../Common.html">9.1.1. Common</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Datetime.html">9.1.1.1. Datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Graph.html">9.1.1.2. Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/IterTools.html">9.1.1.3. IterTools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Logging.html">9.1.1.4. Logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Math.html">9.1.1.5. Math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Path.html">9.1.1.6. Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Xml.html">9.1.1.7. Xml</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Config.html">9.1.2. Config</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Config/ConfigInstall.html">9.1.2.1. ConfigInstall</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../FileFormat.html">9.1.3. FileFormat</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../Svg.html">9.1.3.1. Svg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Valentina.html">9.1.3.2. Valentina</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../GeometryEngine.html">9.1.4. GeometryEngine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Bezier.html">9.1.4.1. Bezier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/BoundingBox.html">9.1.4.2. BoundingBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Conic.html">9.1.4.3. Conic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Interpolation.html">9.1.4.4. Interpolation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Line.html">9.1.4.5. Line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Primitive.html">9.1.4.6. Primitive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Segment.html">9.1.4.7. Segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Transformation.html">9.1.4.8. Transformation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Triangle.html">9.1.4.9. Triangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GeometryEngine/Vector.html">9.1.4.10. Vector</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../GraphicEngine.html">9.1.5. GraphicEngine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../GraphicEngine/GraphicScene.html">9.1.5.1. GraphicScene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GraphicEngine/Painter.html">9.1.5.2. Painter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GraphicEngine/TeX.html">9.1.5.3. TeX</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Pattern.html">9.1.6. Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Pattern/Calculation.html">9.1.6.1. Calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pattern/Calculator.html">9.1.6.2. Calculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pattern/Contour.html">9.1.6.3. Contour</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pattern/Measurement.html">9.1.6.4. Measurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pattern/Pattern.html">9.1.6.5. Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pattern/PersonalData.html">9.1.6.6. PersonalData</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../reference-manual.html#indexes">9.2. Indexes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../development.html">10. Development &amp; Community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#how-you-can-help">10.1. How you can help ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../development.html#contributors">10.2. Contributors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how-to-refer.html">11. How to Refer to Patro ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../donate.html">12. How to Help Further ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../related-projects.html">13. Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bibliography.html">14. Bibliography</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Patro</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../reference-manual.html">9. API Documentation</a> &raquo;</li>
+        
+          <li><a href="../../../Patro.html">9.1. Patro</a> &raquo;</li>
+        
+          <li><a href="../../FileFormat.html">9.1.3. FileFormat</a> &raquo;</li>
+        
+          <li><a href="../Svg.html">9.1.3.1. Svg</a> &raquo;</li>
+        
+      <li>9.1.3.1.2. SvgFormat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/api/Patro/FileFormat/Svg/SvgFormat.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Patro.FileFormat.Svg.SvgFormat">
+<span id="svgformat"></span><h1>9.1.3.1.2. SvgFormat<a class="headerlink" href="#module-Patro.FileFormat.Svg.SvgFormat" title="Permalink to this headline">¶</a></h1>
+<p>This modules implements the <a class="reference external" href="https://www.w3.org/Graphics/SVG">SVG</a> file format.</p>
+<p>References:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.w3.org/TR/SVG11">SVG 1.1 (Second Edition) W3C Recommendation 16 August 2011</a></li>
+</ul>
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Svg</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Svg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SizeMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Creates an SVG document fragment</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.preserve_aspect_ratio">
+<code class="descname">preserve_aspect_ratio</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.preserve_aspect_ratio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.version">
+<code class="descname">version</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.view_box">
+<code class="descname">view_box</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.view_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Svg.zoom_and_pan">
+<code class="descname">zoom_and_pan</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Svg.zoom_and_pan" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Anchor">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Anchor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Anchor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Anchor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Creates a link around SVG elements</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyph">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">AltGlyph</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#AltGlyph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.DeltaMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Provides control over the glyphs used to render particular character data</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyph.dx">
+<code class="descname">dx</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyph.dx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyph.dy">
+<code class="descname">dy</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyph.dy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyph.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyph.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyph.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyph.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyphDef">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">AltGlyphDef</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#AltGlyphDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyphDef" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.IdMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a substitution set for glyphs</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyphDef.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyphDef.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyphItem">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">AltGlyphItem</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#AltGlyphItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyphItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.IdMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a candidate set of glyph substitutions</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AltGlyphItem.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AltGlyphItem.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Animate">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Animate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Animate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Animate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines how an attribute of an element changes over time</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AnimateMotion">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">AnimateMotion</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#AnimateMotion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AnimateMotion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Causes a referenced element to move along a motion path</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.AnimateTransform">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">AnimateTransform</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#AnimateTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.AnimateTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Animates a transformation attribute on a target element, thereby allowing animations to control
+translation, scaling, rotation and/or skewing</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Circle</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Circle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.CenterMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PathMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SvgElementMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a circle</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.cx">
+<code class="descname">cx</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.cx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.cy">
+<code class="descname">cy</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.cy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.r">
+<code class="descname">r</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Circle.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Circle.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.ClipPath">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">ClipPath</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#ClipPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.ClipPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Clipping is about hiding what normally would be drawn. The stencil which defines what is and
+what isn’t drawn is called a clipping path</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.ColorProfile">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">ColorProfile</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#ColorProfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.ColorProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Specifies a color profile description (when the document is styled using CSS)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Cursor">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Cursor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Cursor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Cursor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a platform-independent custom cursor</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Cursor.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Cursor.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Cursor.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Cursor.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Defs">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Defs</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Defs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Defs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>A container for referenced elements</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Desc">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Desc</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Desc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>A text-only description for container elements or graphic elements in SVG (user agents may
+display the text as a tooltip)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Ellipse</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Ellipse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.CenterMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PathMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.StyleMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines an ellipse</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.cx">
+<code class="descname">cx</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.cx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.cy">
+<code class="descname">cy</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.cy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.rx">
+<code class="descname">rx</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.rx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.ry">
+<code class="descname">ry</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.ry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Ellipse.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Ellipse.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.FeBlend">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">FeBlend</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#FeBlend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.FeBlend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Composes two objects together according to a certain blending mode</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Group</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Group"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.FontMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PathMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SvgElementMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Used to group together elements</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.clip_path">
+<code class="descname">clip_path</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.clip_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.data_name">
+<code class="descname">data_name</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.data_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.font_family">
+<code class="descname">font_family</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.font_family" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.font_size">
+<code class="descname">font_size</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.font_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Group.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Group.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Image">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Image</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SizeMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines an image</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Image.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Image.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Image.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Image.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Image.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Image.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Image.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Image.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Line</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PathMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SvgElementMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a line</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.x1">
+<code class="descname">x1</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.x1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.x2">
+<code class="descname">x2</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.x2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.y1">
+<code class="descname">y1</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.y1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Line.y2">
+<code class="descname">y2</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Line.y2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.LinearGradient">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">LinearGradient</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#LinearGradient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.LinearGradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.IdMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a linear gradient. Linear gradients fill the object by using a vector, and can be defined
+as horizontal, vertical or angular gradients.</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.LinearGradient.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.LinearGradient.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Marker">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Marker</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Marker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Markers can be placed on the vertices of lines, polylines, polygons and paths. These elements can
+use the marker attributes “marker-start”, “marker-mid” and “marker-end”’ which inherit by
+default or can be set to ‘none’ or the URI of a defined marker. You must first define the marker
+before you can reference it via its URI. Any kind of shape can be put inside marker. They are
+drawn on top of the element they are attached to markerUnits=“‘strokeWidth’ or
+‘userSpaceOnUse’. If ‘strokeWidth’ is used then one unit equals one stroke width. Otherwise, the
+marker does not scale and uses the the same view units as the referencing element (default
+‘strokeWidth’)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Mask">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Mask</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SizeMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Masking is a combination of opacity values and clipping. Like clipping you can use shapes, text
+or paths to define sections of the mask. The default state of a mask is fully transparent which
+is the opposite of clipping plane. The graphics in a mask sets how opaque portions of the mask
+are</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Mask.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Mask.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Mask.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Mask.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Mask.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Mask.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Mask.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Mask.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Path</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PathMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SvgElementMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a path</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.path_data">
+<code class="descname">path_data</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.path_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.path_length">
+<code class="descname">path_length</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.path_length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Path.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Path.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Pattern">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Pattern</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Pattern"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.IdMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SizeMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines the coordinates you want the view to show and the size of the view. Then you add shapes
+into your pattern. The pattern repeats when an edge of the view box (viewing area) is hit</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Pattern.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Pattern.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Pattern.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Pattern.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Pattern.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Pattern.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Pattern.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Pattern.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Pattern.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Pattern.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Polyline</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Polyline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PointsMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PathMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SvgElementMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a graphic that contains at least three sides</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.points">
+<code class="descname">points</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polyline.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polyline.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Polygon</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Polygon"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Svg.SvgFormat.Polyline" title="Patro.FileFormat.Svg.SvgFormat.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.Polyline</span></code></a>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines any shape that consists of only straight lines</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.points">
+<code class="descname">points</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Polygon.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Polygon.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.RadialGradient">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">RadialGradient</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#RadialGradient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.RadialGradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a radial gradient. Radial gradients are created by taking a circle and smoothly changing
+values between gradient stops from the focus point to the outside radius.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Rect</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Rect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.RadiusMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SizeMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PathMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SvgElementMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Defines a rectangle</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.rx">
+<code class="descname">rx</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.rx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.ry">
+<code class="descname">ry</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.ry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.stroke_dasharray">
+<code class="descname">stroke_dasharray</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.stroke_dasharray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.stroke_line_cap">
+<code class="descname">stroke_line_cap</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.stroke_line_cap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.stroke_line_join">
+<code class="descname">stroke_line_join</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.stroke_line_join" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.stroke_miter_limit">
+<code class="descname">stroke_miter_limit</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.stroke_miter_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.stroke_width">
+<code class="descname">stroke_width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.stroke_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Rect.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Rect.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Stop">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Stop</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>The stops for a gradient</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Text</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.DeltaMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.FontMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.ColorMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SvgElementMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.TextXmlObjectAdaptator</span></code></p>
+<p>Defines a text</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.dx">
+<code class="descname">dx</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.dx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.dy">
+<code class="descname">dy</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.dy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.font_family">
+<code class="descname">font_family</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.font_family" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.font_size">
+<code class="descname">font_size</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.font_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Text.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Text.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextRef">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">TextRef</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#TextRef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextRef" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>References any &lt;text&gt; element in the SVG document and reuse it</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">TextSpan</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#TextSpan"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Patro.FileFormat.Svg.SvgFormat.Text" title="Patro.FileFormat.Svg.SvgFormat.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.Text</span></code></a>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Identical to the &lt;text&gt; element but can be nested inside text tags and inside itself</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.dx">
+<code class="descname">dx</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.dx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.dy">
+<code class="descname">dy</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.dy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.fill">
+<code class="descname">fill</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.fill" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.font_family">
+<code class="descname">font_family</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.font_family" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.font_size">
+<code class="descname">font_size</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.font_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.id">
+<code class="descname">id</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.stroke">
+<code class="descname">stroke</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.stroke" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.style">
+<code class="descname">style</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.transform">
+<code class="descname">transform</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.TextSpan.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.TextSpan.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Use">
+<em class="property">class </em><code class="descclassname">Patro.FileFormat.Svg.SvgFormat.</code><code class="descname">Use</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/FileFormat/Svg/SvgFormat.html#Use"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Use" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.PositionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.FileFormat.Svg.SvgFormat.SizeMixin</span></code>, <a class="reference internal" href="../../Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator" title="Patro.Common.Xml.Objectivity.XmlObjectAdaptator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.Common.Xml.Objectivity.XmlObjectAdaptator</span></code></a></p>
+<p>Uses a URI to reference a &lt;g&gt;, &lt;svg&gt; or other graphical element with a unique id attribute and
+replicate it. The copy is only a reference to the original so only the original exists in the
+document. Any change to the original affects all copies.</p>
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Use.height">
+<code class="descname">height</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Use.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Use.width">
+<code class="descname">width</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Use.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Use.x">
+<code class="descname">x</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Use.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.FileFormat.Svg.SvgFormat.Use.y">
+<code class="descname">y</code><a class="headerlink" href="#Patro.FileFormat.Svg.SvgFormat.Use.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Valentina.html" class="btn btn-neutral float-right" title="9.1.3.2. Valentina" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SvgFile.html" class="btn btn-neutral" title="9.1.3.1.1. SvgFile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Fabrice Salvaire.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.3.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../../../static/getthecode.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

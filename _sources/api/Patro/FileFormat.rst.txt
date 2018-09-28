@@ -4,6 +4,7 @@
 ============
 
 .. toctree::
+    FileFormat/Svg
     FileFormat/Valentina
 
 .. automodule:: Patro.FileFormat
