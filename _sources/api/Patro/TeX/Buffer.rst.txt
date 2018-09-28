@@ -1,8 +1,0 @@
-
-========
- Buffer
-========
-
-.. automodule:: Patro.TeX.Buffer
-   :members:
-   :show-inheritance:

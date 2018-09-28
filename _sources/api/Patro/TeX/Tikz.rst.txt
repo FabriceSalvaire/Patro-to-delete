@@ -1,8 +1,0 @@
-
-======
- Tikz
-======
-
-.. automodule:: Patro.TeX.Tikz
-   :members:
-   :show-inheritance:

@@ -1,8 +1,0 @@
-
-=========
- Pattern
-=========
-
-.. automodule:: Patro.FileFormat.Pattern
-   :members:
-   :show-inheritance:

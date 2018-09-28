@@ -1,8 +1,0 @@
-
-======================
- DirectedAcyclicGraph
-======================
-
-.. automodule:: Patro.Graph.DirectedAcyclicGraph
-   :members:
-   :show-inheritance:

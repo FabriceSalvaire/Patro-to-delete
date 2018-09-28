@@ -1,8 +1,0 @@
-
-=============
- Environment
-=============
-
-.. automodule:: Patro.TeX.Environment
-   :members:
-   :show-inheritance:

@@ -8,6 +8,7 @@
     Painter/Painter
     Painter/Paper
     Painter/PdfPainter
+    Painter/SvgPainter
     Painter/TexPainter
 
 .. automodule:: Patro.GraphicEngine.Painter

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.1.5.2.4. PdfPainter &mdash; Patro 0.3.0 documentation</title>
+  <title>9.1.5.2.5. SvgPainter &mdash; Patro 0.3.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="9.1.5.2.5. SvgPainter" href="SvgPainter.html" />
-    <link rel="prev" title="9.1.5.2.3. Paper" href="Paper.html" /> 
+    <link rel="next" title="9.1.5.2.6. TexPainter" href="TexPainter.html" />
+    <link rel="prev" title="9.1.5.2.4. PdfPainter" href="PdfPainter.html" /> 
 
   
   <script src="../../../../static/js/modernizr.min.js"></script>
@@ -256,13 +256,13 @@
         
           <li><a href="../Painter.html">9.1.5.2. Painter</a> &raquo;</li>
         
-      <li>9.1.5.2.4. PdfPainter</li>
+      <li>9.1.5.2.5. SvgPainter</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../../_sources/api/Patro/GraphicEngine/Painter/PdfPainter.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/api/Patro/GraphicEngine/Painter/SvgPainter.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -275,12 +275,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-Patro.GraphicEngine.Painter.PdfPainter">
-<span id="pdfpainter"></span><h1>9.1.5.2.4. PdfPainter<a class="headerlink" href="#module-Patro.GraphicEngine.Painter.PdfPainter" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="Patro.GraphicEngine.Painter.PdfPainter.PdfPainter">
-<code class="descclassname">Patro.GraphicEngine.Painter.PdfPainter.</code><code class="descname">PdfPainter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/Painter/PdfPainter.html#PdfPainter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.Painter.PdfPainter.PdfPainter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wrapper to driver classes</p>
+  <div class="section" id="module-Patro.GraphicEngine.Painter.SvgPainter">
+<span id="svgpainter"></span><h1>9.1.5.2.5. SvgPainter<a class="headerlink" href="#module-Patro.GraphicEngine.Painter.SvgPainter" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="Patro.GraphicEngine.Painter.SvgPainter.SvgPainter">
+<em class="property">class </em><code class="descclassname">Patro.GraphicEngine.Painter.SvgPainter.</code><code class="descname">SvgPainter</code><span class="sig-paren">(</span><em>path</em>, <em>scene</em>, <em>paper</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/Painter/SvgPainter.html#SvgPainter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.Painter.SvgPainter.SvgPainter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="Painter.html#Patro.GraphicEngine.Painter.Painter.Painter" title="Patro.GraphicEngine.Painter.Painter.Painter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GraphicEngine.Painter.Painter.Painter</span></code></a></p>
+<dl class="method">
+<dt id="Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_CircleItem">
+<code class="descname">paint_CircleItem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/Painter/SvgPainter.html#SvgPainter.paint_CircleItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_CircleItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_CoordinateItem">
+<code class="descname">paint_CoordinateItem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/Painter/SvgPainter.html#SvgPainter.paint_CoordinateItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_CoordinateItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_CubicBezierItem">
+<code class="descname">paint_CubicBezierItem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/Painter/SvgPainter.html#SvgPainter.paint_CubicBezierItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_CubicBezierItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_SegmentItem">
+<code class="descname">paint_SegmentItem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/Painter/SvgPainter.html#SvgPainter.paint_SegmentItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_SegmentItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_TextItem">
+<code class="descname">paint_TextItem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/Painter/SvgPainter.html#SvgPainter.paint_TextItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.Painter.SvgPainter.SvgPainter.paint_TextItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -293,10 +318,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="SvgPainter.html" class="btn btn-neutral float-right" title="9.1.5.2.5. SvgPainter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="TexPainter.html" class="btn btn-neutral float-right" title="9.1.5.2.6. TexPainter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Paper.html" class="btn btn-neutral" title="9.1.5.2.3. Paper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="PdfPainter.html" class="btn btn-neutral" title="9.1.5.2.4. PdfPainter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
