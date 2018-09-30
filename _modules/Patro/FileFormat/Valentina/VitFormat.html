@@ -166,11 +166,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Conic.html">9.1.4.3. Conic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Interpolation.html">9.1.4.4. Interpolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Line.html">9.1.4.5. Line</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Primitive.html">9.1.4.6. Primitive</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Segment.html">9.1.4.7. Segment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Transformation.html">9.1.4.8. Transformation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Triangle.html">9.1.4.9. Triangle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Vector.html">9.1.4.10. Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Polygon.html">9.1.4.6. Polygon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Primitive.html">9.1.4.7. Primitive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Rectangle.html">9.1.4.8. Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Segment.html">9.1.4.9. Segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Transformation.html">9.1.4.10. Transformation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Triangle.html">9.1.4.11. Triangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GeometryEngine/Vector.html">9.1.4.12. Vector</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/Patro/GraphicEngine.html">9.1.5. GraphicEngine</a><ul>
@@ -179,13 +181,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/GraphicEngine/TeX.html">9.1.5.3. TeX</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../api/Patro/Pattern.html">9.1.6. Pattern</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Calculation.html">9.1.6.1. Calculation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Calculator.html">9.1.6.2. Calculator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Contour.html">9.1.6.3. Contour</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Measurement.html">9.1.6.4. Measurement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Pattern.html">9.1.6.5. Pattern</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/PersonalData.html">9.1.6.6. PersonalData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Patro/Measurement.html">9.1.6. Measurement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Measurement/Measurement.html">9.1.6.1. Measurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Measurement/PersonalData.html">9.1.6.2. PersonalData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Measurement/StandardMeasurement.html">9.1.6.3. StandardMeasurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Measurement/ValentinaMeasurement.html">9.1.6.4. ValentinaMeasurement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Patro/Pattern.html">9.1.7. Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Calculation.html">9.1.7.1. Calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Calculator.html">9.1.7.2. Calculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Pattern/Pattern.html">9.1.7.3. Pattern</a></li>
 </ul>
 </li>
 </ul>
@@ -318,6 +324,145 @@
     <span class="n">XmlObjectAdaptator</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">Patro.GeometryEngine.Vector</span> <span class="k">import</span> <span class="n">Vector2D</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="k">class</span> <span class="nc">ValentinaBuiltInVariables</span><span class="p">:</span>
+
+    <span class="c1"># defined in libs/ifc/ifcdef.cpp</span>
+
+    <span class="n">current_length</span> <span class="o">=</span> <span class="s1">&#39;CurrentLength&#39;</span>
+    <span class="n">current_seam_allowance</span> <span class="o">=</span> <span class="s1">&#39;CurrentSeamAllowance&#39;</span>
+
+    <span class="n">angle_line</span>  <span class="o">=</span> <span class="s1">&#39;AngleLine_&#39;</span>
+    <span class="n">increment</span>   <span class="o">=</span> <span class="s1">&#39;Increment_&#39;</span>
+    <span class="n">line</span>        <span class="o">=</span> <span class="s1">&#39;Line_&#39;</span>
+    <span class="n">measurement</span> <span class="o">=</span> <span class="s1">&#39;M_&#39;</span>
+    <span class="n">seg</span>         <span class="o">=</span> <span class="s1">&#39;Seg_&#39;</span>
+
+    <span class="n">arc</span>         <span class="o">=</span> <span class="s1">&#39;ARC_&#39;</span>
+    <span class="n">elarc</span>       <span class="o">=</span> <span class="s1">&#39;ELARC_&#39;</span>
+    <span class="n">spl</span>         <span class="o">=</span> <span class="s1">&#39;SPL_&#39;</span>
+
+    <span class="n">angle1</span>      <span class="o">=</span> <span class="s1">&#39;Angle1&#39;</span>
+    <span class="n">angle2</span>      <span class="o">=</span> <span class="s1">&#39;Angle2&#39;</span>
+    <span class="n">c1_length</span>   <span class="o">=</span> <span class="s1">&#39;C1Length&#39;</span>
+    <span class="n">c2_length</span>   <span class="o">=</span> <span class="s1">&#39;C2Length&#39;</span>
+    <span class="n">radius</span>      <span class="o">=</span> <span class="s1">&#39;Radius&#39;</span>
+    <span class="n">rotation</span>    <span class="o">=</span> <span class="s1">&#39;Rotation&#39;</span>
+
+    <span class="n">spl_path</span>    <span class="o">=</span> <span class="s1">&#39;SplPath&#39;</span>
+
+    <span class="n">angle1_arc</span>         <span class="o">=</span> <span class="n">angle1</span> <span class="o">+</span> <span class="n">arc</span>
+    <span class="n">angle1_elarc</span>       <span class="o">=</span> <span class="n">angle1</span> <span class="o">+</span> <span class="n">elarc</span>
+    <span class="n">angle1_spl_path</span>    <span class="o">=</span> <span class="n">angle1</span> <span class="o">+</span> <span class="n">spl_path</span>
+    <span class="n">angle1_spl</span>         <span class="o">=</span> <span class="n">angle1</span> <span class="o">+</span> <span class="n">spl</span>
+    <span class="n">angle2_arc</span>         <span class="o">=</span> <span class="n">angle2</span> <span class="o">+</span> <span class="n">arc</span>
+    <span class="n">angle2_elarc</span>       <span class="o">=</span> <span class="n">angle2</span> <span class="o">+</span> <span class="n">elarc</span>
+    <span class="n">angle2_spl_path</span>    <span class="o">=</span> <span class="n">angle2</span> <span class="o">+</span> <span class="n">spl_path</span>
+    <span class="n">angle2_spl</span>         <span class="o">=</span> <span class="n">angle2</span> <span class="o">+</span> <span class="n">spl</span>
+    <span class="n">c1_length_spl_path</span> <span class="o">=</span> <span class="n">c1_length</span> <span class="o">+</span> <span class="n">spl_path</span>
+    <span class="n">c1_length_spl</span>      <span class="o">=</span> <span class="n">c1_length</span> <span class="o">+</span> <span class="n">spl</span>
+    <span class="n">c2_length_spl_path</span> <span class="o">=</span> <span class="n">c2_length</span> <span class="o">+</span> <span class="n">spl_path</span>
+    <span class="n">c2_length_spl</span>      <span class="o">=</span> <span class="n">c2_length</span> <span class="o">+</span> <span class="n">spl</span>
+    <span class="n">radius1_elarc</span>      <span class="o">=</span> <span class="n">radius</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="n">elarc</span>
+    <span class="n">radius2_elarc</span>      <span class="o">=</span> <span class="n">radius</span> <span class="o">+</span> <span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="n">elarc</span>
+    <span class="n">radius_arc</span>         <span class="o">=</span> <span class="n">radius</span> <span class="o">+</span> <span class="n">arc</span>
+    <span class="n">rotation_elarc</span>     <span class="o">=</span> <span class="n">rotation</span> <span class="o">+</span> <span class="n">elarc</span>
+
+<span class="c1">####################################################################################################</span>
+
+<span class="n">VALENTINA_ATTRIBUTES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;aScale&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;angle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;angle1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;angle2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;arc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;axisP1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;axisP2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;axisType&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;baseLineP1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;baseLineP2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;basePoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;c1Center&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;c1Radius&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;c2Center&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;c2Radius&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cCenter&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cRadius&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;closed&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;color&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;crossPoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;curve&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;curve1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;curve2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cut&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dartP1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dartP2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dartP3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;duplicate&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;firstArc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;firstPoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;firstToCountour&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;forbidFlipping&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;forceFlipping&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;hCrossPoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;height&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;idObject&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;inLayout&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;kAsm1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;kAsm2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;kCurve&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lastToCountour&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;length&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;length1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;length2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;lineColor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mx1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mx2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;my&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;my1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;my2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;name1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;name2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;p1Line&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;p1Line1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;p1Line2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;p2Line&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;p2Line1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;p2Line2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pShoulder&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pSpline&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pathPoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;penStyle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;placeLabelType&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;point1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;point2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;point3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;point4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;radius&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;radius1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;radius2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rotationAngle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;secondArc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;secondPoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;showLabel&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;showLabel1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;showLabel2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;suffix&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tangent&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;thirdPoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;typeLine&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;vCrossPoint&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;width&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="c1">####################################################################################################</span>
 
@@ -942,84 +1087,6 @@
         <span class="n">StringAttribute</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">),</span>
         <span class="n">BoolAttribute</span><span class="p">(</span><span class="s1">&#39;reverse&#39;</span><span class="p">),</span>
     <span class="p">)</span></div>
-
-<span class="c1">####################################################################################################</span>
-
-<span class="c1"># angle</span>
-<span class="c1"># angle1</span>
-<span class="c1"># angle2</span>
-<span class="c1"># arc</span>
-<span class="c1"># axisP1</span>
-<span class="c1"># axisP2</span>
-<span class="c1"># axisType</span>
-<span class="c1"># baseLineP1</span>
-<span class="c1"># baseLineP2</span>
-<span class="c1"># basePoint</span>
-<span class="c1"># c1Center</span>
-<span class="c1"># c1Radius</span>
-<span class="c1"># c2Center</span>
-<span class="c1"># c2Radius</span>
-<span class="c1"># cCenter</span>
-<span class="c1"># center</span>
-<span class="c1"># color</span>
-<span class="c1"># cRadius</span>
-<span class="c1"># crossPoint</span>
-<span class="c1"># curve</span>
-<span class="c1"># curve1</span>
-<span class="c1"># curve2</span>
-<span class="c1"># dartP1</span>
-<span class="c1"># dartP2</span>
-<span class="c1"># dartP3</span>
-<span class="c1"># duplicate</span>
-<span class="c1"># firstArc</span>
-<span class="c1"># firstPoint</span>
-<span class="c1"># hCrossPoint</span>
-<span class="c1"># id</span>
-<span class="c1"># idObject</span>
-<span class="c1"># length</span>
-<span class="c1"># length1</span>
-<span class="c1"># length2</span>
-<span class="c1"># lineColor</span>
-<span class="c1"># mx</span>
-<span class="c1"># mx1</span>
-<span class="c1"># mx2</span>
-<span class="c1"># my</span>
-<span class="c1"># my1</span>
-<span class="c1"># my2</span>
-<span class="c1"># name</span>
-<span class="c1"># name1</span>
-<span class="c1"># name2</span>
-<span class="c1"># object (group)</span>
-<span class="c1"># p1Line</span>
-<span class="c1"># p1Line1</span>
-<span class="c1"># p1Line2</span>
-<span class="c1"># p2Line</span>
-<span class="c1"># p2Line1</span>
-<span class="c1"># p2Line2</span>
-<span class="c1"># point1</span>
-<span class="c1"># point2</span>
-<span class="c1"># point3</span>
-<span class="c1"># point4</span>
-<span class="c1"># pShoulder</span>
-<span class="c1"># pSpline</span>
-<span class="c1"># radius</span>
-<span class="c1"># radius1</span>
-<span class="c1"># radius2</span>
-<span class="c1"># rotationAngle</span>
-<span class="c1"># secondArc</span>
-<span class="c1"># secondPoint</span>
-<span class="c1"># spline</span>
-<span class="c1"># splinePath</span>
-<span class="c1"># suffix</span>
-<span class="c1"># tangent</span>
-<span class="c1"># thirdPoint</span>
-<span class="c1"># tool</span>
-<span class="c1"># type</span>
-<span class="c1"># typeLine</span>
-<span class="c1"># vCrossPoint</span>
-<span class="c1"># visible (group)</span>
-<span class="c1"># x</span>
-<span class="c1"># y</span>
 </pre></div>
 
            </div>

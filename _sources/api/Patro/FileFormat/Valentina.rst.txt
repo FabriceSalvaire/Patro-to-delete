@@ -4,7 +4,7 @@
 ===========
 
 .. toctree::
-    Valentina/Measurements
+    Valentina/Measurement
     Valentina/Pattern
     Valentina/VitFormat
 

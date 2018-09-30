@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="9.1.4.6. Primitive" href="Primitive.html" />
+    <link rel="next" title="9.1.4.6. Polygon" href="Polygon.html" />
     <link rel="prev" title="9.1.4.4. Interpolation" href="Interpolation.html" /> 
 
   
@@ -168,11 +168,13 @@
 <li class="toctree-l4"><a class="reference internal" href="Conic.html">9.1.4.3. Conic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Interpolation.html">9.1.4.4. Interpolation</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">9.1.4.5. Line</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Primitive.html">9.1.4.6. Primitive</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Segment.html">9.1.4.7. Segment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Transformation.html">9.1.4.8. Transformation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Triangle.html">9.1.4.9. Triangle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Vector.html">9.1.4.10. Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Polygon.html">9.1.4.6. Polygon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Primitive.html">9.1.4.7. Primitive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Rectangle.html">9.1.4.8. Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Segment.html">9.1.4.9. Segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Transformation.html">9.1.4.10. Transformation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Triangle.html">9.1.4.11. Triangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Vector.html">9.1.4.12. Vector</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../GraphicEngine.html">9.1.5. GraphicEngine</a><ul>
@@ -181,13 +183,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../GraphicEngine/TeX.html">9.1.5.3. TeX</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../Pattern.html">9.1.6. Pattern</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Pattern/Calculation.html">9.1.6.1. Calculation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Pattern/Calculator.html">9.1.6.2. Calculator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Pattern/Contour.html">9.1.6.3. Contour</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Pattern/Measurement.html">9.1.6.4. Measurement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Pattern/Pattern.html">9.1.6.5. Pattern</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Pattern/PersonalData.html">9.1.6.6. PersonalData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Measurement.html">9.1.6. Measurement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Measurement/Measurement.html">9.1.6.1. Measurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Measurement/PersonalData.html">9.1.6.2. PersonalData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Measurement/StandardMeasurement.html">9.1.6.3. StandardMeasurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Measurement/ValentinaMeasurement.html">9.1.6.4. ValentinaMeasurement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Pattern.html">9.1.7. Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Calculation.html">9.1.7.1. Calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Calculator.html">9.1.7.2. Calculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pattern/Pattern.html">9.1.7.3. Pattern</a></li>
 </ul>
 </li>
 </ul>
@@ -336,6 +342,12 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="Patro.GeometryEngine.Line.Line2D.interpolate">
+<code class="descname">interpolate</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Line.html#Line2D.interpolate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Line.Line2D.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Point corresponding to the curvilinear abscissa s</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="Patro.GeometryEngine.Line.Line2D.intersection">
 <code class="descname">intersection</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Line.html#Line2D.intersection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Line.Line2D.intersection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the intersection Point between self and other</p>
@@ -361,7 +373,7 @@
 
 <dl class="method">
 <dt id="Patro.GeometryEngine.Line.Line2D.is_parallel">
-<code class="descname">is_parallel</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Line.html#Line2D.is_parallel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Line.Line2D.is_parallel" title="Permalink to this definition">¶</a></dt>
+<code class="descname">is_parallel</code><span class="sig-paren">(</span><em>other</em>, <em>cross=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Line.html#Line2D.is_parallel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Line.Line2D.is_parallel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Self is parallel to other</p>
 </dd></dl>
 
@@ -373,7 +385,13 @@
 
 <dl class="method">
 <dt id="Patro.GeometryEngine.Line.Line2D.point_at_s">
-<code class="descname">point_at_s</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Line.html#Line2D.point_at_s"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Line.Line2D.point_at_s" title="Permalink to this definition">¶</a></dt>
+<code class="descname">point_at_s</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#Patro.GeometryEngine.Line.Line2D.point_at_s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Point corresponding to the curvilinear abscissa s</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Patro.GeometryEngine.Line.Line2D.point_at_t">
+<code class="descname">point_at_t</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#Patro.GeometryEngine.Line.Line2D.point_at_t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Point corresponding to the curvilinear abscissa s</p>
 </dd></dl>
 
@@ -401,7 +419,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Primitive.html" class="btn btn-neutral float-right" title="9.1.4.6. Primitive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Polygon.html" class="btn btn-neutral float-right" title="9.1.4.6. Polygon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Interpolation.html" class="btn btn-neutral" title="9.1.4.4. Interpolation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -9,6 +9,7 @@
     Patro/FileFormat
     Patro/GeometryEngine
     Patro/GraphicEngine
+    Patro/Measurement
     Patro/Pattern
 
 .. automodule:: Patro

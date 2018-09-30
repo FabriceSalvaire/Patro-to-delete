@@ -9,7 +9,9 @@
     GeometryEngine/Conic
     GeometryEngine/Interpolation
     GeometryEngine/Line
+    GeometryEngine/Polygon
     GeometryEngine/Primitive
+    GeometryEngine/Rectangle
     GeometryEngine/Segment
     GeometryEngine/Transformation
     GeometryEngine/Triangle

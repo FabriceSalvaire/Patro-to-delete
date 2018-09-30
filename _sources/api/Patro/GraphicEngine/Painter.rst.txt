@@ -4,6 +4,7 @@
 =========
 
 .. toctree::
+    Painter/DxfPainter
     Painter/MplPainter
     Painter/Painter
     Painter/Paper
