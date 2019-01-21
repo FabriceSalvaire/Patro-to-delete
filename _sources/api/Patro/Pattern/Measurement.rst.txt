@@ -1,8 +1,0 @@
-
-=============
- Measurement
-=============
-
-.. automodule:: Patro.Pattern.Measurement
-   :members:
-   :show-inheritance:

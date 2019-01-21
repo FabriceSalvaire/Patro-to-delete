@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.1.7. Pattern &mdash; Patro 0.3.0 documentation</title>
+  <title>9.1.8. Pattern &mdash; Patro 0.3.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.1.7.1. Calculation" href="Pattern/Calculation.html" />
-    <link rel="prev" title="9.1.6.4. ValentinaMeasurement" href="Measurement/ValentinaMeasurement.html" /> 
+    <link rel="next" title="9.1.8.1. Calculator" href="Pattern/Calculator.html" />
+    <link rel="prev" title="9.1.7.5. ValentinaStandardMeasurement" href="Measurement/ValentinaStandardMeasurement.html" /> 
 
   
   <script src="../../static/js/modernizr.min.js"></script>
@@ -144,13 +144,16 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../reference-manual.html">9. API Documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../Patro.html">9.1. Patro</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="Common.html">9.1.1. Common</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Common/Datetime.html">9.1.1.1. Datetime</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/Graph.html">9.1.1.2. Graph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/IterTools.html">9.1.1.3. IterTools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/Logging.html">9.1.1.4. Logging</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/Math.html">9.1.1.5. Math</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/Path.html">9.1.1.6. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/Xml.html">9.1.1.7. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/AtomicCounter.html">9.1.1.1. AtomicCounter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Datetime.html">9.1.1.2. Datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Graph.html">9.1.1.3. Graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/IterTools.html">9.1.1.4. IterTools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Logging.html">9.1.1.5. Logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Math.html">9.1.1.6. Math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Object.html">9.1.1.7. Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Path.html">9.1.1.8. Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Singleton.html">9.1.1.9. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Xml.html">9.1.1.10. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Config.html">9.1.2. Config</a><ul>
@@ -158,8 +161,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="FileFormat.html">9.1.3. FileFormat</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="FileFormat/Svg.html">9.1.3.1. Svg</a></li>
-<li class="toctree-l4"><a class="reference internal" href="FileFormat/Valentina.html">9.1.3.2. Valentina</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FileFormat/Dxf.html">9.1.3.1. Dxf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FileFormat/Svg.html">9.1.3.2. Svg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="FileFormat/Valentina.html">9.1.3.3. Valentina</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="GeometryEngine.html">9.1.4. GeometryEngine</a><ul>
@@ -168,13 +172,18 @@
 <li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Conic.html">9.1.4.3. Conic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Interpolation.html">9.1.4.4. Interpolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Line.html">9.1.4.5. Line</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Polygon.html">9.1.4.6. Polygon</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Primitive.html">9.1.4.7. Primitive</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Rectangle.html">9.1.4.8. Rectangle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Segment.html">9.1.4.9. Segment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Transformation.html">9.1.4.10. Transformation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Triangle.html">9.1.4.11. Triangle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Vector.html">9.1.4.12. Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Path.html">9.1.4.6. Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Polygon.html">9.1.4.7. Polygon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Polyline.html">9.1.4.8. Polyline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Primitive.html">9.1.4.9. Primitive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Rectangle.html">9.1.4.10. Rectangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Segment.html">9.1.4.11. Segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Spline.html">9.1.4.12. Spline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Transformation.html">9.1.4.13. Transformation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Triangle.html">9.1.4.14. Triangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine/Vector.html">9.1.4.15. Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine.html#purpose">9.1.4.16. Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GeometryEngine.html#bibliographical-references">9.1.4.17. Bibliographical References</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="GraphicEngine.html">9.1.5. GraphicEngine</a><ul>
@@ -183,17 +192,27 @@
 <li class="toctree-l4"><a class="reference internal" href="GraphicEngine/TeX.html">9.1.5.3. TeX</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Measurement.html">9.1.6. Measurement</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Measurement/Measurement.html">9.1.6.1. Measurement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Measurement/PersonalData.html">9.1.6.2. PersonalData</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Measurement/StandardMeasurement.html">9.1.6.3. StandardMeasurement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Measurement/ValentinaMeasurement.html">9.1.6.4. ValentinaMeasurement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GraphicStyle.html">9.1.6. GraphicStyle</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GraphicStyle/Color.html">9.1.6.1. Color</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">9.1.7. Pattern</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Pattern/Calculation.html">9.1.7.1. Calculation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Pattern/Calculator.html">9.1.7.2. Calculator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Pattern/Pattern.html">9.1.7.3. Pattern</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Measurement.html">9.1.7. Measurement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Measurement/Measurement.html">9.1.7.1. Measurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Measurement/PersonalData.html">9.1.7.2. PersonalData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Measurement/StandardMeasurement.html">9.1.7.3. StandardMeasurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Measurement/ValentinaMeasurement.html">9.1.7.4. ValentinaMeasurement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Measurement/ValentinaStandardMeasurement.html">9.1.7.5. ValentinaStandardMeasurement</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">9.1.8. Pattern</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Pattern/Calculator.html">9.1.8.1. Calculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Pattern/Pattern.html">9.1.8.2. Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Pattern/Sketch.html">9.1.8.3. Sketch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Pattern/SketchOperation.html">9.1.8.4. SketchOperation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="QtApplication.html">9.1.9. QtApplication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="QtApplication/QmlApplication.html">9.1.9.1. QmlApplication</a></li>
 </ul>
 </li>
 </ul>
@@ -259,7 +278,7 @@
         
           <li><a href="../Patro.html">9.1. Patro</a> &raquo;</li>
         
-      <li>9.1.7. Pattern</li>
+      <li>9.1.8. Pattern</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -279,12 +298,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pattern">
-<h1>9.1.7. Pattern<a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h1>
+<h1>9.1.8. Pattern<a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Pattern/Calculation.html">9.1.7.1. Calculation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Pattern/Calculator.html">9.1.7.2. Calculator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Pattern/Pattern.html">9.1.7.3. Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pattern/Calculator.html">9.1.8.1. Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pattern/Pattern.html">9.1.8.2. Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pattern/Sketch.html">9.1.8.3. Sketch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pattern/SketchOperation.html">9.1.8.4. SketchOperation</a></li>
 </ul>
 </div>
 <span class="target" id="module-Patro.Pattern"></span><p>This subpackage implements the core engine for pattern.</p>
@@ -298,10 +318,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Pattern/Calculation.html" class="btn btn-neutral float-right" title="9.1.7.1. Calculation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Pattern/Calculator.html" class="btn btn-neutral float-right" title="9.1.8.1. Calculator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Measurement/ValentinaMeasurement.html" class="btn btn-neutral" title="9.1.6.4. ValentinaMeasurement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Measurement/ValentinaStandardMeasurement.html" class="btn btn-neutral" title="9.1.7.5. ValentinaStandardMeasurement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -310,7 +330,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Fabrice Salvaire.
+        &copy; Copyright 2019, Fabrice Salvaire
 
     </p>
   </div>
@@ -329,22 +349,16 @@
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../../',
-            VERSION:'0.3.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../../static/jquery.js"></script>
-      <script type="text/javascript" src="../../static/underscore.js"></script>
-      <script type="text/javascript" src="../../static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script type="text/javascript" src="../../static/getthecode.js"></script>
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../static/jquery.js"></script>
+        <script type="text/javascript" src="../../static/underscore.js"></script>
+        <script type="text/javascript" src="../../static/doctools.js"></script>
+        <script type="text/javascript" src="../../static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../../static/getthecode.js"></script>
+    
 
   
 

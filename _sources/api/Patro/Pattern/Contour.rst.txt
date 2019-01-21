@@ -1,8 +1,0 @@
-
-=========
- Contour
-=========
-
-.. automodule:: Patro.Pattern.Contour
-   :members:
-   :show-inheritance:

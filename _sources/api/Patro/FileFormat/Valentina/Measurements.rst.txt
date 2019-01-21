@@ -1,8 +1,0 @@
-
-==============
- Measurements
-==============
-
-.. automodule:: Patro.FileFormat.Valentina.Measurements
-   :members:
-   :show-inheritance:

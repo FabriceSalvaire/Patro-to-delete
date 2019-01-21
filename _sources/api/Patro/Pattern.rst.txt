@@ -4,9 +4,10 @@
 =========
 
 .. toctree::
-    Pattern/Calculation
     Pattern/Calculator
     Pattern/Pattern
+    Pattern/Sketch
+    Pattern/SketchOperation
 
 .. automodule:: Patro.Pattern
    :members:

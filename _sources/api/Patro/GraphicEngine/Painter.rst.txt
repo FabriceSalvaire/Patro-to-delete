@@ -9,6 +9,7 @@
     Painter/Painter
     Painter/Paper
     Painter/PdfPainter
+    Painter/QtPainter
     Painter/SvgPainter
     Painter/TexPainter
 

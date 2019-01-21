@@ -9,10 +9,13 @@
     GeometryEngine/Conic
     GeometryEngine/Interpolation
     GeometryEngine/Line
+    GeometryEngine/Path
     GeometryEngine/Polygon
+    GeometryEngine/Polyline
     GeometryEngine/Primitive
     GeometryEngine/Rectangle
     GeometryEngine/Segment
+    GeometryEngine/Spline
     GeometryEngine/Transformation
     GeometryEngine/Triangle
     GeometryEngine/Vector

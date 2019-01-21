@@ -4,6 +4,7 @@
 ============
 
 .. toctree::
+    FileFormat/Dxf
     FileFormat/Svg
     FileFormat/Valentina
 

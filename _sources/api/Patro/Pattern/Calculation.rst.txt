@@ -1,8 +1,0 @@
-
-=============
- Calculation
-=============
-
-.. automodule:: Patro.Pattern.Calculation
-   :members:
-   :show-inheritance:

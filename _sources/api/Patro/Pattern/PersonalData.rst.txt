@@ -1,8 +1,0 @@
-
-==============
- PersonalData
-==============
-
-.. automodule:: Patro.Pattern.PersonalData
-   :members:
-   :show-inheritance:

@@ -4,12 +4,15 @@
 ========
 
 .. toctree::
+    Common/AtomicCounter
     Common/Datetime
     Common/Graph
     Common/IterTools
     Common/Logging
     Common/Math
+    Common/Object
     Common/Path
+    Common/Singleton
     Common/Xml
 
 .. automodule:: Patro.Common

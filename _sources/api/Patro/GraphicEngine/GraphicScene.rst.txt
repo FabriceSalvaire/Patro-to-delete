@@ -6,6 +6,7 @@
 .. toctree::
     GraphicScene/GraphicItem
     GraphicScene/Scene
+    GraphicScene/TypographyUnit
 
 .. automodule:: Patro.GraphicEngine.GraphicScene
    :members:

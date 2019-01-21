@@ -8,6 +8,7 @@
     Measurement/PersonalData
     Measurement/StandardMeasurement
     Measurement/ValentinaMeasurement
+    Measurement/ValentinaStandardMeasurement
 
 .. automodule:: Patro.Measurement
    :members:
