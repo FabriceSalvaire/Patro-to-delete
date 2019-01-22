@@ -151,8 +151,9 @@
 <li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -303,6 +304,7 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
  | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
@@ -376,8 +378,6 @@
 </li>
       <li><a href="api/Patro/Common/Graph/DirectedAcyclicGraph.html#Patro.Common.Graph.DirectedAcyclicGraph.DirectedAcyclicGraphNode.ancestor">ancestor (Patro.Common.Graph.DirectedAcyclicGraph.DirectedAcyclicGraphNode attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Anchor">Anchor (class in Patro.FileFormat.Svg.SvgFormat)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Dxf/Polyline.html#Patro.FileFormat.Dxf.Polyline.PolylineVertex.angle">angle (Patro.FileFormat.Dxf.Polyline.PolylineVertex attribute)</a>
@@ -390,6 +390,8 @@
         <li><a href="api/Patro/Pattern/SketchOperation.html#Patro.Pattern.SketchOperation.AngleMixin.angle">(Patro.Pattern.SketchOperation.AngleMixin attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/Pattern/SketchOperation.html#Patro.Pattern.SketchOperation.SimpleInteractiveSpline.angle1">angle1 (Patro.Pattern.SketchOperation.SimpleInteractiveSpline attribute)</a>
 </li>
       <li><a href="api/Patro/Pattern/SketchOperation.html#Patro.Pattern.SketchOperation.SimpleInteractiveSpline.angle2">angle2 (Patro.Pattern.SketchOperation.SimpleInteractiveSpline attribute)</a>
@@ -414,6 +416,18 @@
 </li>
       <li><a href="api/Patro/Common/IterTools.html#Patro.Common.IterTools.PairWiseManipulator.apply">apply() (Patro.Common.IterTools.PairWiseManipulator method)</a>
 </li>
+      <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Circle2D.apply_transformation">apply_transformation() (Patro.GeometryEngine.Conic.Circle2D method)</a>
+
+      <ul>
+        <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Ellipse2D.apply_transformation">(Patro.GeometryEngine.Conic.Ellipse2D method)</a>
+</li>
+        <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.CubicBezierSegment.apply_transformation">(Patro.GeometryEngine.Path.CubicBezierSegment method)</a>
+</li>
+        <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.Path2D.apply_transformation">(Patro.GeometryEngine.Path.Path2D method)</a>
+</li>
+        <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.apply_transformation">(Patro.GeometryEngine.Primitive.Primitive method)</a>
+</li>
+      </ul></li>
       <li><a href="api/Patro/GeometryEngine/Bezier.html#Patro.GeometryEngine.Bezier.CubicBezier2D.area">area (Patro.GeometryEngine.Bezier.CubicBezier2D attribute)</a>
 
       <ul>
@@ -452,6 +466,8 @@
       </ul></li>
       <li><a href="api/Patro/GeometryEngine/Spline.html#Patro.GeometryEngine.Spline.BSpline2D.basis_function">basis_function() (Patro.GeometryEngine.Spline.BSpline2D method)</a>
 </li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.JoinStyle.BevelJoin">BevelJoin (Patro.GraphicStyle.JoinStyle attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Circle2D.bezier_approximation">bezier_approximation() (Patro.GeometryEngine.Conic.Circle2D method)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/Scene.html#Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope.bezier_path">bezier_path() (Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope method)</a>
@@ -476,10 +492,12 @@
 </li>
       <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.blue">blue (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
 </li>
-      <li><a href="api/Patro/Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.BoolAttribute">BoolAttribute (class in Patro.Common.Xml.Objectivity)</a>
+      <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.blue_float">blue_float (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Patro/Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.BoolAttribute">BoolAttribute (class in Patro.Common.Xml.Objectivity)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Circle2D.bounding_box">bounding_box (Patro.GeometryEngine.Conic.Circle2D attribute)</a>
 
       <ul>
@@ -534,6 +552,10 @@
 </li>
       <li><a href="api/Patro/Pattern/Sketch.html#Patro.Pattern.Sketch.Sketch.calculator">calculator (Patro.Pattern.Sketch.Sketch attribute)</a>
 </li>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.cap_style">cap_style (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
+</li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.CapStyle">CapStyle (class in Patro.GraphicStyle)</a>
+</li>
       <li><a href="api/Patro/GraphicEngine/Painter/Painter.html#Patro.GraphicEngine.Painter.Painter.Painter.cast_item_positions">cast_item_positions() (Patro.GraphicEngine.Painter.Painter.Painter method)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/Scene.html#Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope.cast_position">cast_position() (Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope method)</a>
@@ -582,16 +604,24 @@
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.ClipPath">ClipPath (class in Patro.FileFormat.Svg.SvgFormat)</a>
 </li>
-      <li><a href="api/Patro/GeometryEngine/Line.html#Patro.GeometryEngine.Line.Line2D.clone">clone() (Patro.GeometryEngine.Line.Line2D method)</a>
+      <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Circle2D.clone">clone() (Patro.GeometryEngine.Conic.Circle2D method)</a>
 
       <ul>
+        <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Ellipse2D.clone">(Patro.GeometryEngine.Conic.Ellipse2D method)</a>
+</li>
+        <li><a href="api/Patro/GeometryEngine/Line.html#Patro.GeometryEngine.Line.Line2D.clone">(Patro.GeometryEngine.Line.Line2D method)</a>
+</li>
+        <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.CubicBezierSegment.clone">(Patro.GeometryEngine.Path.CubicBezierSegment method)</a>
+</li>
+        <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.Path2D.clone">(Patro.GeometryEngine.Path.Path2D method)</a>
+</li>
+        <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.QuadraticBezierSegment.clone">(Patro.GeometryEngine.Path.QuadraticBezierSegment method)</a>
+</li>
         <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.clone">(Patro.GeometryEngine.Primitive.Primitive method)</a>
 </li>
         <li><a href="api/Patro/GeometryEngine/Vector.html#Patro.GeometryEngine.Vector.Vector2DBase.clone">(Patro.GeometryEngine.Vector.Vector2DBase method)</a>
 </li>
-        <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.clone">(Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle method)</a>
-</li>
-        <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.clone">(Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle method)</a>
+        <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.clone">(Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle method)</a>
 </li>
         <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.clone">(Patro.GraphicStyle.Color.ColorDataBase.Color method)</a>
 </li>
@@ -600,6 +630,8 @@
 </li>
       <li><a href="api/Patro/FileFormat/Dxf/Polyline.html#Patro.FileFormat.Dxf.Polyline.Polyline.closed">closed (Patro.FileFormat.Dxf.Polyline.Polyline attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/Common/IterTools.html#Patro.Common.IterTools.closed_pairwise">closed_pairwise() (in module Patro.Common.IterTools)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Bezier.html#Patro.GeometryEngine.Bezier.CubicBezier2D.closest_point">closest_point() (Patro.GeometryEngine.Bezier.CubicBezier2D method)</a>
@@ -608,8 +640,6 @@
         <li><a href="api/Patro/GeometryEngine/Bezier.html#Patro.GeometryEngine.Bezier.QuadraticBezier2D.closest_point">(Patro.GeometryEngine.Bezier.QuadraticBezier2D method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/FileFormat/Svg/SvgFile.html#Patro.FileFormat.Svg.SvgFile.SvgDispatcher.cls">cls (Patro.FileFormat.Svg.SvgFile.SvgDispatcher attribute)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFile.html#Patro.FileFormat.Svg.SvgFile.SvgDispatcher.cls_name">cls_name (Patro.FileFormat.Svg.SvgFile.SvgDispatcher attribute)</a>
@@ -640,7 +670,7 @@
 </li>
       <li><a href="api/Patro/GraphicEngine/TeX/Document.html#Patro.GraphicEngine.TeX.Document.Document.content">content (Patro.GraphicEngine.TeX.Document.Document attribute)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.control_color">control_color (Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle attribute)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicBezierStyle.control_color">control_color (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicBezierStyle attribute)</a>
 </li>
       <li><a href="api/Patro/Pattern/SketchOperation.html#Patro.Pattern.SketchOperation.SimpleInteractiveSpline.control_point1">control_point1 (Patro.Pattern.SketchOperation.SimpleInteractiveSpline attribute)</a>
 </li>
@@ -984,7 +1014,9 @@
         <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.TextSpan.fill">(Patro.FileFormat.Svg.SvgFormat.TextSpan attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.fill_color">fill_color (Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle attribute)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.fill_alpha">fill_alpha (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
+</li>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.fill_color">fill_color (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
 </li>
       <li><a href="api/Patro/Common/Path.html#Patro.Common.Path.find">find() (in module Patro.Common.Path)</a>
 
@@ -1008,11 +1040,13 @@
         <li><a href="api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.ViewportArea.fit_scene">(Patro.GraphicEngine.Painter.QtPainter.ViewportArea method)</a>
 </li>
       </ul></li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.CapStyle.FlatCap">FlatCap (Patro.GraphicStyle.CapStyle attribute)</a>
+</li>
       <li><a href="api/Patro/Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.FloatAttribute">FloatAttribute (class in Patro.Common.Xml.Objectivity)</a>
 </li>
       <li><a href="api/Patro/Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.FloatListAttribute">FloatListAttribute (class in Patro.Common.Xml.Objectivity)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.Font">Font (class in Patro.GraphicEngine.GraphicScene.GraphicItem)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.Font">Font (class in Patro.GraphicEngine.GraphicScene.GraphicStyle)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.TextItem.font">font (Patro.GraphicEngine.GraphicScene.GraphicItem.TextItem attribute)</a>
 </li>
@@ -1110,6 +1144,8 @@
 </li>
       <li><a href="api/Patro/Measurement/PersonalData.html#Patro.Measurement.PersonalData.PersonalData.gender">gender (Patro.Measurement.PersonalData.PersonalData attribute)</a>
 </li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.Generic">Generic (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.CubicBezierSegment.geometry">geometry (Patro.GeometryEngine.Path.CubicBezierSegment attribute)</a>
 
       <ul>
@@ -1174,17 +1210,19 @@
 </li>
       <li><a href="api/Patro/GeometryEngine/Line.html#Patro.GeometryEngine.Line.Line2D.get_y_from_x">get_y_from_x() (Patro.GeometryEngine.Line.Line2D method)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle">GraphicBezierStyle (class in Patro.GraphicEngine.GraphicScene.GraphicItem)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicBezierStyle">GraphicBezierStyle (class in Patro.GraphicEngine.GraphicScene.GraphicStyle)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicItem">GraphicItem (class in Patro.GraphicEngine.GraphicScene.GraphicItem)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle">GraphicPathStyle (class in Patro.GraphicEngine.GraphicScene.GraphicItem)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle">GraphicPathStyle (class in Patro.GraphicEngine.GraphicScene.GraphicStyle)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/Scene.html#Patro.GraphicEngine.GraphicScene.Scene.GraphicScene">GraphicScene (class in Patro.GraphicEngine.GraphicScene.Scene)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/Scene.html#Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope">GraphicSceneScope (class in Patro.GraphicEngine.GraphicScene.Scene)</a>
 </li>
       <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.green">green (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
+</li>
+      <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.green_float">green_float (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Group">Group (class in Patro.FileFormat.Svg.SvgFormat)</a>
 </li>
@@ -1222,9 +1260,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GraphicEngine/Painter/Paper.html#Patro.GraphicEngine.Painter.Paper.PaperSize.height_in">height_in (Patro.GraphicEngine.Painter.Paper.PaperSize attribute)</a>
 </li>
+      <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.hls">hls (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Vector.html#Patro.GeometryEngine.Vector.HomogeneousVector2D">HomogeneousVector2D (class in Patro.GeometryEngine.Vector)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.Path2D.horizontal_to">horizontal_to() (Patro.GeometryEngine.Path.Path2D method)</a>
+</li>
+      <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.hsv">hsv (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1270,6 +1312,8 @@
         <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.ModelingSpline.id">(Patro.FileFormat.Valentina.VitFormat.ModelingSpline attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.Identity">Identity (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation.Identity">Identity() (Patro.GeometryEngine.Transformation.Transformation class method)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Image">Image (class in Patro.FileFormat.Svg.SvgFormat)</a>
@@ -1364,6 +1408,8 @@
         <li><a href="api/Patro/GeometryEngine/Spline.html#Patro.GeometryEngine.Spline.BSpline2D.is_closed">(Patro.GeometryEngine.Spline.BSpline2D attribute)</a>
 </li>
         <li><a href="api/Patro/GeometryEngine/Triangle.html#Patro.GeometryEngine.Triangle.Triangle2D.is_closed">(Patro.GeometryEngine.Triangle.Triangle2D attribute)</a>
+</li>
+        <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin.is_closed">(Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/Patro/GeometryEngine/Segment.html#Patro.GeometryEngine.Segment.Segment2D.is_collinear">is_collinear() (Patro.GeometryEngine.Segment.Segment2D method)</a>
@@ -1461,6 +1507,18 @@
   </ul></td>
 </tr></table>
 
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.join_style">join_style (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.JoinStyle">JoinStyle (class in Patro.GraphicStyle)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -1522,10 +1580,10 @@
 </li>
       <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.DetailData.letter">letter (Patro.FileFormat.Valentina.VitFormat.DetailData attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GraphicEngine/Painter/Paper.html#Patro.GraphicEngine.Painter.Paper.PaperSize.LETTER_TO_DIMENSION">LETTER_TO_DIMENSION (Patro.GraphicEngine.Painter.Paper.PaperSize attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Line">Line (class in Patro.FileFormat.Svg.SvgFormat)</a>
 
       <ul>
@@ -1552,9 +1610,9 @@
       </ul></li>
       <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.Path2D.line_to">line_to() (Patro.GeometryEngine.Path.Path2D method)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.line_width">line_width (Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle attribute)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.line_width">line_width (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.line_width_as_float">line_width_as_float (Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle attribute)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.line_width_as_float">line_width_as_float (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.LinearGradient">LinearGradient (class in Patro.FileFormat.Svg.SvgFormat)</a>
 </li>
@@ -1567,6 +1625,8 @@
       <li><a href="api/Patro/Pattern/Sketch.html#Patro.Pattern.Sketch.Sketch.LineIntersectPoint">LineIntersectPoint() (Patro.Pattern.Sketch.Sketch method)</a>
 </li>
       <li><a href="api/Patro/Pattern/SketchOperation.html#Patro.Pattern.SketchOperation.LinePropertiesMixin">LinePropertiesMixin (class in Patro.Pattern.SketchOperation)</a>
+</li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.PlatformType.Linux">Linux (Patro.Common.Platform.PlatformType attribute)</a>
 </li>
       <li><a href="api/Patro/Measurement/Measurement.html#Patro.Measurement.Measurement.Measurements.load_yaml">load_yaml() (Patro.Measurement.Measurement.Measurements method)</a>
 </li>
@@ -1628,15 +1688,19 @@
       </ul></li>
       <li><a href="api/Patro/GeometryEngine/Bezier.html#Patro.GeometryEngine.Bezier.CubicBezier2D.mid_point_quadratic_approximation">mid_point_quadratic_approximation() (Patro.GeometryEngine.Bezier.CubicBezier2D method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/Common/Math/Functions.html#Patro.Common.Math.Functions.middle">middle() (in module Patro.Common.Math.Functions)</a>
 
       <ul>
         <li><a href="api/Patro/GeometryEngine/Vector.html#Patro.GeometryEngine.Vector.Vector2D.middle">(Patro.GeometryEngine.Vector.Vector2D static method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Ellipse2D.minor_vector">minor_vector (Patro.GeometryEngine.Conic.Ellipse2D attribute)</a>
+</li>
+      <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.mirror">mirror() (Patro.GeometryEngine.Primitive.Primitive method)</a>
+</li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.JoinStyle.MiterJoin">MiterJoin (Patro.GraphicStyle.JoinStyle attribute)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/TypographyUnit.html#Patro.GraphicEngine.GraphicScene.TypographyUnit.MmUnit">MmUnit (class in Patro.GraphicEngine.GraphicScene.TypographyUnit)</a>
 </li>
@@ -1764,6 +1828,8 @@
         <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive4P.number_of_points">(Patro.GeometryEngine.Primitive.Primitive4P attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.QtPlatform.number_of_screens">number_of_screens (Patro.Common.Platform.QtPlatform attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Spline.html#Patro.GeometryEngine.Spline.BSpline2D.number_of_spans">number_of_spans (Patro.GeometryEngine.Spline.BSpline2D attribute)</a>
 </li>
   </ul></td>
@@ -1815,6 +1881,8 @@
       <li><a href="api/Patro/GeometryEngine/Line.html#Patro.GeometryEngine.Line.Line2D.orthogonal_line_at_abscissa">orthogonal_line_at_abscissa() (Patro.GeometryEngine.Line.Line2D method)</a>
 </li>
       <li><a href="api/Patro/Config/ConfigInstall.html#Patro.Config.ConfigInstall.OsFactory">OsFactory (class in Patro.Config.ConfigInstall)</a>
+</li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.PlatformType.OSX">OSX (Patro.Common.Platform.PlatformType attribute)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/TeX/Document.html#Patro.GraphicEngine.TeX.Document.Document.output_directory">output_directory (Patro.GraphicEngine.TeX.Document.Document attribute)</a>
 </li>
@@ -1926,6 +1994,8 @@
 </li>
       <li><a href="api/Patro/Common/Path.html#Patro.Common.Path.parent_directory_of">parent_directory_of() (in module Patro.Common.Path)</a>
 </li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.Parity">Parity (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Vector.html#Patro.GeometryEngine.Vector.Vector2DFloatBase.parity">parity (Patro.GeometryEngine.Vector.Vector2DFloatBase attribute)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation2D.Parity">Parity() (Patro.GeometryEngine.Transformation.Transformation2D class method)</a>
@@ -1979,6 +2049,8 @@
       <li><a href="api/Patro/Common/Object.html#module-Patro.Common.Object">Patro.Common.Object (module)</a>
 </li>
       <li><a href="api/Patro/Common/Path.html#module-Patro.Common.Path">Patro.Common.Path (module)</a>
+</li>
+      <li><a href="api/Patro/Common/Platform.html#module-Patro.Common.Platform">Patro.Common.Platform (module)</a>
 </li>
       <li><a href="api/Patro/Common/Singleton.html#module-Patro.Common.Singleton">Patro.Common.Singleton (module)</a>
 </li>
@@ -2052,16 +2124,18 @@
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#module-Patro.GraphicEngine.GraphicScene.GraphicItem">Patro.GraphicEngine.GraphicScene.GraphicItem (module)</a>
 </li>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#module-Patro.GraphicEngine.GraphicScene.GraphicStyle">Patro.GraphicEngine.GraphicScene.GraphicStyle (module)</a>
+</li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/Scene.html#module-Patro.GraphicEngine.GraphicScene.Scene">Patro.GraphicEngine.GraphicScene.Scene (module)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/TypographyUnit.html#module-Patro.GraphicEngine.GraphicScene.TypographyUnit">Patro.GraphicEngine.GraphicScene.TypographyUnit (module)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/Painter.html#module-Patro.GraphicEngine.Painter">Patro.GraphicEngine.Painter (module)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/Painter/DxfPainter.html#module-Patro.GraphicEngine.Painter.DxfPainter">Patro.GraphicEngine.Painter.DxfPainter (module)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Patro/GraphicEngine/Painter/DxfPainter.html#module-Patro.GraphicEngine.Painter.DxfPainter">Patro.GraphicEngine.Painter.DxfPainter (module)</a>
+</li>
       <li><a href="api/Patro/GraphicEngine/Painter/MplPainter.html#module-Patro.GraphicEngine.Painter.MplPainter">Patro.GraphicEngine.Painter.MplPainter (module)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/Painter/Painter.html#module-Patro.GraphicEngine.Painter.Painter">Patro.GraphicEngine.Painter.Painter (module)</a>
@@ -2157,6 +2231,10 @@
       <li><a href="api/Patro/Measurement/Measurement.html#Patro.Measurement.Measurement.Measurements.personal">personal (Patro.Measurement.Measurement.Measurements attribute)</a>
 </li>
       <li><a href="api/Patro/Measurement/PersonalData.html#Patro.Measurement.PersonalData.PersonalData">PersonalData (class in Patro.Measurement.PersonalData)</a>
+</li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.Platform">Platform (class in Patro.Common.Platform)</a>
+</li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.PlatformType">PlatformType (class in Patro.Common.Platform)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.Point">Point (class in Patro.FileFormat.Valentina.VitFormat)</a>
 
@@ -2314,6 +2392,8 @@
 </li>
       <li><a href="api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtPainter">QtPainter (class in Patro.GraphicEngine.Painter.QtPainter)</a>
 </li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.QtPlatform">QtPlatform (class in Patro.Common.Platform)</a>
+</li>
       <li><a href="api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtQuickPaintedSceneItem">QtQuickPaintedSceneItem (class in Patro.GraphicEngine.Painter.QtPainter)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtScene">QtScene (class in Patro.GraphicEngine.Painter.QtPainter)</a>
@@ -2327,6 +2407,8 @@
       <li><a href="api/Patro/GeometryEngine/Bezier.html#Patro.GeometryEngine.Bezier.QuadraticBezier2D">QuadraticBezier2D (class in Patro.GeometryEngine.Bezier)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.QuadraticBezierSegment">QuadraticBezierSegment (class in Patro.GeometryEngine.Path)</a>
+</li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.QtPlatform.query_opengl">query_opengl() (Patro.Common.Platform.QtPlatform method)</a>
 </li>
       <li><a href="api/Patro/Pattern/SketchOperation.html#Patro.Pattern.SketchOperation.quote">quote() (in module Patro.Pattern.SketchOperation)</a>
 </li>
@@ -2372,6 +2454,8 @@
 </li>
       <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.red">red (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
 </li>
+      <li><a href="api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.ColorDataBase.Color.red_float">red_float (Patro.GraphicStyle.Color.ColorDataBase.Color attribute)</a>
+</li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/Scene.html#Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope.remove_coordinate">remove_coordinate() (Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope method)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/Scene.html#Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope.remove_item">remove_item() (Patro.GraphicEngine.GraphicScene.Scene.GraphicSceneScope method)</a>
@@ -2382,12 +2466,12 @@
 </li>
       <li><a href="api/Patro/Measurement/ValentinaMeasurement.html#Patro.Measurement.ValentinaMeasurement.ValentinaMeasurement.replace_custom_prefix">replace_custom_prefix() (Patro.Measurement.ValentinaMeasurement.ValentinaMeasurement class method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.DetailNode.reverse">reverse (Patro.FileFormat.Valentina.VitFormat.DetailNode attribute)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.reverse">reverse() (Patro.GeometryEngine.Primitive.Primitive method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive1P.reversed_points">reversed_points (Patro.GeometryEngine.Primitive.Primitive1P attribute)</a>
 
       <ul>
@@ -2408,8 +2492,12 @@
       </ul></li>
       <li><a href="api/Patro/Common/Graph/DirectedAcyclicGraph.html#Patro.Common.Graph.DirectedAcyclicGraph.DirectedAcyclicGraph.roots">roots() (Patro.Common.Graph.DirectedAcyclicGraph.DirectedAcyclicGraph method)</a>
 </li>
-      <li><a href="api/Patro/GeometryEngine/Vector.html#Patro.GeometryEngine.Vector.Vector2DFloatBase.rotate">rotate() (Patro.GeometryEngine.Vector.Vector2DFloatBase method)</a>
+      <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.rotate">rotate() (Patro.GeometryEngine.Primitive.Primitive method)</a>
+
+      <ul>
+        <li><a href="api/Patro/GeometryEngine/Vector.html#Patro.GeometryEngine.Vector.Vector2DFloatBase.rotate">(Patro.GeometryEngine.Vector.Vector2DFloatBase method)</a>
 </li>
+      </ul></li>
       <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.DetailData.rotation">rotation (Patro.FileFormat.Valentina.VitFormat.DetailData attribute)</a>
 
       <ul>
@@ -2418,6 +2506,8 @@
         <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.DetailPatternInfo.rotation">(Patro.FileFormat.Valentina.VitFormat.DetailPatternInfo attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.Rotation">Rotation (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.AffineTransformation2D.Rotation">Rotation() (Patro.GeometryEngine.Transformation.AffineTransformation2D class method)</a>
 
       <ul>
@@ -2425,6 +2515,10 @@
 </li>
       </ul></li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.AffineTransformation.RotationAt">RotationAt() (Patro.GeometryEngine.Transformation.AffineTransformation class method)</a>
+</li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.CapStyle.RoundCap">RoundCap (Patro.GraphicStyle.CapStyle attribute)</a>
+</li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.JoinStyle.RoundJoin">RoundJoin (Patro.GraphicStyle.JoinStyle attribute)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/TeX/Document.html#Patro.GraphicEngine.TeX.Document.Document.run_pdflatex">run_pdflatex() (Patro.GraphicEngine.TeX.Document.Document method)</a>
 </li>
@@ -2455,6 +2549,10 @@
       <li><a href="api/Patro/GeometryEngine/Triangle.html#Patro.GeometryEngine.Triangle.same_side">same_side() (in module Patro.GeometryEngine.Triangle)</a>
 </li>
       <li><a href="api/Patro/Measurement/Measurement.html#Patro.Measurement.Measurement.Measurements.save_as_yaml">save_as_yaml() (Patro.Measurement.Measurement.Measurements method)</a>
+</li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.Scale">Scale (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
+</li>
+      <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.scale">scale() (Patro.GeometryEngine.Primitive.Primitive method)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.AffineTransformation2D.Scale">Scale() (Patro.GeometryEngine.Transformation.AffineTransformation2D class method)</a>
 
@@ -2506,6 +2604,8 @@
 </li>
       <li><a href="api/Patro/Pattern/Pattern.html#Patro.Pattern.Pattern.Pattern.scopes">scopes (Patro.Pattern.Pattern.Pattern attribute)</a>
 </li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.Screen">Screen (class in Patro.Common.Platform)</a>
+</li>
       <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.Detail.seamAllowance">seamAllowance (Patro.FileFormat.Valentina.VitFormat.Detail attribute)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.Line.second_point">second_point (Patro.FileFormat.Valentina.VitFormat.Line attribute)</a>
@@ -2536,11 +2636,13 @@
 </li>
       <li><a href="api/Patro/GeometryEngine/Segment.html#Patro.GeometryEngine.Segment.Segment2D.share_vertex_with">share_vertex_with() (Patro.GeometryEngine.Segment.Segment2D method)</a>
 </li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.Shear">Shear (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Line.html#Patro.GeometryEngine.Line.Line2D.shifted_parallel_line">shifted_parallel_line() (Patro.GeometryEngine.Line.Line2D method)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/Painter/MplPainter.html#Patro.GraphicEngine.Painter.MplPainter.MplPainter.show">show() (Patro.GraphicEngine.Painter.MplPainter.MplPainter method)</a>
 </li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.show_control">show_control (Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle attribute)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicBezierStyle.show_control">show_control (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicBezierStyle attribute)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Segment.html#Patro.GeometryEngine.Segment.Segment2D.side_of">side_of() (Patro.GeometryEngine.Segment.Segment2D method)</a>
 </li>
@@ -2600,6 +2702,8 @@
       </ul></li>
       <li><a href="api/Patro/GeometryEngine/Bezier.html#Patro.GeometryEngine.Bezier.BezierMixin2D.split_at_two_t">split_at_two_t() (Patro.GeometryEngine.Bezier.BezierMixin2D method)</a>
 </li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.CapStyle.SquareCap">SquareCap (Patro.GraphicStyle.CapStyle attribute)</a>
+</li>
       <li><a href="api/Patro/Measurement/StandardMeasurement.html#Patro.Measurement.StandardMeasurement.StandardMeasurement">StandardMeasurement (class in Patro.Measurement.StandardMeasurement)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.AngularDomain.start">start (Patro.GeometryEngine.Conic.AngularDomain attribute)</a>
@@ -2612,12 +2716,12 @@
 </li>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.AngularDomain.start_radians">start_radians (Patro.GeometryEngine.Conic.AngularDomain attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin">StartStopAngleMixin (class in Patro.GraphicEngine.GraphicScene.GraphicItem)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Stop">Stop (class in Patro.FileFormat.Svg.SvgFormat)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.AngularDomain.stop">stop (Patro.GeometryEngine.Conic.AngularDomain attribute)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin.stop_angle">stop_angle (Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin attribute)</a>
@@ -2654,7 +2758,9 @@
         <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.TextSpan.stroke">(Patro.FileFormat.Svg.SvgFormat.TextSpan attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.stroke_color">stroke_color (Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle attribute)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.stroke_alpha">stroke_alpha (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
+</li>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.stroke_color">stroke_color (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Circle.stroke_dasharray">stroke_dasharray (Patro.FileFormat.Svg.SvgFormat.Circle attribute)</a>
 
@@ -2728,7 +2834,7 @@
         <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Rect.stroke_miter_limit">(Patro.FileFormat.Svg.SvgFormat.Rect attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.stroke_style">stroke_style (Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle attribute)</a>
+      <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicStyle.html#Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle.stroke_style">stroke_style (Patro.GraphicEngine.GraphicScene.GraphicStyle.GraphicPathStyle attribute)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Circle.stroke_width">stroke_width (Patro.FileFormat.Svg.SvgFormat.Circle attribute)</a>
 
@@ -2785,6 +2891,8 @@
       <li><a href="api/Patro/FileFormat/Svg/SvgFile.html#Patro.FileFormat.Svg.SvgFile.SvgDispatcher">SvgDispatcher (class in Patro.FileFormat.Svg.SvgFile)</a>
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFile.html#Patro.FileFormat.Svg.SvgFile.SvgFile">SvgFile (class in Patro.FileFormat.Svg.SvgFile)</a>
+</li>
+      <li><a href="api/Patro/GraphicStyle.html#Patro.GraphicStyle.JoinStyle.SvgMiterJoin">SvgMiterJoin (Patro.GraphicStyle.JoinStyle attribute)</a>
 </li>
       <li><a href="api/Patro/GraphicEngine/Painter/SvgPainter.html#Patro.GraphicEngine.Painter.SvgPainter.SvgPainter">SvgPainter (class in Patro.GraphicEngine.Painter.SvgPainter)</a>
 </li>
@@ -2868,8 +2976,6 @@
 </li>
       <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.Line.to_operation">to_operation() (Patro.FileFormat.Valentina.VitFormat.Line method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GraphicEngine/GraphicScene/TypographyUnit.html#Patro.GraphicEngine.GraphicScene.TypographyUnit.InchUnit.to_point">to_point() (Patro.GraphicEngine.GraphicScene.TypographyUnit.InchUnit method)</a>
 
       <ul>
@@ -2878,9 +2984,13 @@
         <li><a href="api/Patro/GraphicEngine/GraphicScene/TypographyUnit.html#Patro.GraphicEngine.GraphicScene.TypographyUnit.PointUnit.to_point">(Patro.GraphicEngine.GraphicScene.TypographyUnit.PointUnit method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/Pattern/SketchOperation.html#Patro.Pattern.SketchOperation.SketchOperation.to_python">to_python() (Patro.Pattern.SketchOperation.SketchOperation method)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Bezier.html#Patro.GeometryEngine.Bezier.CubicBezier2D.to_spline">to_spline() (Patro.GeometryEngine.Bezier.CubicBezier2D method)</a>
+</li>
+      <li><a href="api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtPainter.to_svg">to_svg() (Patro.GraphicEngine.Painter.QtPainter.QtPainter method)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Polygon.html#Patro.GeometryEngine.Polygon.Polygon2D.to_triangle">to_triangle() (Patro.GeometryEngine.Polygon.Polygon2D method)</a>
 </li>
@@ -2926,6 +3036,8 @@
 </li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation2D">Transformation2D (class in Patro.GeometryEngine.Transformation)</a>
 </li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType">TransformationType (class in Patro.GeometryEngine.Transformation)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.AffineTransformation.Translation">Translation() (Patro.GeometryEngine.Transformation.AffineTransformation class method)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.AffineTransformation.translation_part">translation_part (Patro.GeometryEngine.Transformation.AffineTransformation attribute)</a>
@@ -2945,7 +3057,11 @@
 </li>
         <li><a href="api/Patro/FileFormat/Valentina/VitFormat.html#Patro.FileFormat.Valentina.VitFormat.ModelingSpline.type">(Patro.FileFormat.Valentina.VitFormat.ModelingSpline attribute)</a>
 </li>
+        <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation.type">(Patro.GeometryEngine.Transformation.Transformation attribute)</a>
+</li>
       </ul></li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation2D.type_for_scale">type_for_scale() (Patro.GeometryEngine.Transformation.Transformation2D class method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -3106,6 +3222,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/Patro/GraphicEngine/Painter/Paper.html#Patro.GraphicEngine.Painter.Paper.PaperSize.width_in">width_in (Patro.GraphicEngine.Painter.Paper.PaperSize attribute)</a>
 </li>
+      <li><a href="api/Patro/Common/Platform.html#Patro.Common.Platform.PlatformType.Windows">Windows (Patro.Common.Platform.PlatformType attribute)</a>
+</li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFile.html#Patro.FileFormat.Svg.SvgFile.SvgFile.write">write() (Patro.FileFormat.Svg.SvgFile.SvgFile method)</a>
 
       <ul>
@@ -3152,6 +3270,8 @@
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Line.x2">x2 (Patro.FileFormat.Svg.SvgFormat.Line attribute)</a>
 </li>
+      <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.x_mirror">x_mirror() (Patro.GeometryEngine.Primitive.Primitive method)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Ellipse2D.x_radius">x_radius (Patro.GeometryEngine.Conic.Ellipse2D attribute)</a>
 
       <ul>
@@ -3163,6 +3283,8 @@
       <li><a href="api/Patro/FileFormat/Valentina/Measurement.html#Patro.FileFormat.Valentina.Measurement.XmlMeasurement">XmlMeasurement (class in Patro.FileFormat.Valentina.Measurement)</a>
 </li>
       <li><a href="api/Patro/Common/Xml/Objectivity.html#Patro.Common.Xml.Objectivity.XmlObjectAdaptator">XmlObjectAdaptator (class in Patro.Common.Xml.Objectivity)</a>
+</li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.XParity">XParity (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
 </li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation2D.XReflection">XReflection() (Patro.GeometryEngine.Transformation.Transformation2D class method)</a>
 </li>
@@ -3206,12 +3328,16 @@
 </li>
       <li><a href="api/Patro/FileFormat/Svg/SvgFormat.html#Patro.FileFormat.Svg.SvgFormat.Line.y2">y2 (Patro.FileFormat.Svg.SvgFormat.Line attribute)</a>
 </li>
+      <li><a href="api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.y_mirror">y_mirror() (Patro.GeometryEngine.Primitive.Primitive method)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Ellipse2D.y_radius">y_radius (Patro.GeometryEngine.Conic.Ellipse2D attribute)</a>
 
       <ul>
         <li><a href="api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.EllipseItem.y_radius">(Patro.GraphicEngine.GraphicScene.GraphicItem.EllipseItem attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType.YParity">YParity (Patro.GeometryEngine.Transformation.TransformationType attribute)</a>
+</li>
       <li><a href="api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation2D.YReflection">YReflection() (Patro.GeometryEngine.Transformation.Transformation2D class method)</a>
 </li>
   </ul></td>

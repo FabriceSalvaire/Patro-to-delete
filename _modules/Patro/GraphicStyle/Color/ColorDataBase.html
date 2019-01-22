@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -322,6 +323,10 @@
 
 <span class="c1">####################################################################################################</span>
 
+<span class="kn">import</span> <span class="nn">colorsys</span>
+
+<span class="c1">####################################################################################################</span>
+
 <div class="viewcode-block" id="Color"><a class="viewcode-back" href="../../../../api/Patro/GraphicStyle/Color/ColorDataBase.html#Patro.GraphicStyle.Color.Color">[docs]</a><span class="k">class</span> <span class="nc">Color</span><span class="p">:</span>
 
     <span class="sd">&quot;&quot;&quot;Class to define a colour</span>
@@ -353,19 +358,32 @@
         <span class="k">if</span> <span class="n">number_of_args</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">color</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Color</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_red</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">red</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_green</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">green</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">blue</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_red</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">red_float</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_green</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">green_float</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">blue_float</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">rgb</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">rgb</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">):</span>
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid color </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rgb</span><span class="p">))</span>
                 <span class="n">rgb</span> <span class="o">=</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_red</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rgb</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_green</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rgb</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span>
+                <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">rgb</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">rgb</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+                                                      <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">)]</span>
         <span class="k">elif</span> <span class="n">number_of_args</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_check_value</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="s1">&#39;hue&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;light&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">hue</span><span class="p">,</span> <span class="n">light</span><span class="p">,</span> <span class="n">saturation</span> <span class="o">=</span> <span class="p">[</span><span class="n">kwargs</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;hue&#39;</span><span class="p">,</span> <span class="s1">&#39;light&#39;</span><span class="p">,</span> <span class="s1">&#39;saturation&#39;</span><span class="p">)]</span>
+                <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">hls_to_rgb</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">light</span><span class="p">,</span> <span class="n">saturation</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="s1">&#39;value&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">hue</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">saturation</span> <span class="o">=</span> <span class="p">[</span><span class="n">kwargs</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;hue&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;saturation&#39;</span><span class="p">)]</span>
+                <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span> <span class="o">=</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">saturation</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Missing color parameter&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_check_value</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">)]</span>
 
         <span class="c1"># self._name = kwargs.get(&#39;name&#39;, None)</span>
         <span class="k">if</span> <span class="s1">&#39;name&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
@@ -381,7 +399,7 @@
     <span class="c1">##############################################</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__STR_FORMAT__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__STR_FORMAT__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
 
     <span class="c1">##############################################</span>
 
@@ -390,40 +408,78 @@
 
     <span class="c1">##############################################</span>
 
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_to_int</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_to_float</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="mi">255</span>
+
+    <span class="c1">##############################################</span>
+
     <span class="k">def</span> <span class="nf">_check_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
             <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">value</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
             <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span>
+                <span class="c1"># return int(value * 255)</span>
+                <span class="k">return</span> <span class="n">value</span> <span class="c1"># keep float</span>
+
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid colour </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
 
     <span class="c1">##############################################</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">red</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">red_float</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_red</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">red</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">)</span>
 
     <span class="nd">@red</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">red</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_red</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">green</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">green_float</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">green</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">)</span>
 
     <span class="nd">@green</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">green</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_green</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">blue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">blue_float</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">blue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_blue</span><span class="p">)</span>
 
     <span class="nd">@blue</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">blue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="c1"># note hue and saturation is ambiguous</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">rgb_to_hls</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hsv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">rgb_to_hsv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_red</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blue</span><span class="p">)</span>
 
     <span class="c1">##############################################</span>
 

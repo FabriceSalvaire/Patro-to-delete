@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -325,152 +326,10 @@
 <span class="kn">from</span> <span class="nn">Patro.GeometryEngine.Polyline</span> <span class="k">import</span> <span class="n">Polyline2D</span>
 <span class="kn">from</span> <span class="nn">Patro.GeometryEngine.Rectangle</span> <span class="k">import</span> <span class="n">Rectangle2D</span>
 <span class="kn">from</span> <span class="nn">Patro.GeometryEngine.Segment</span> <span class="k">import</span> <span class="n">Segment2D</span>
-<span class="kn">from</span> <span class="nn">Patro.GraphicStyle</span> <span class="k">import</span> <span class="n">Colors</span><span class="p">,</span> <span class="n">StrokeStyle</span>
 
 <span class="c1">####################################################################################################</span>
 
 <span class="n">_module_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-
-<span class="c1">####################################################################################################</span>
-
-<div class="viewcode-block" id="GraphicPathStyle"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle">[docs]</a><span class="k">class</span> <span class="nc">GraphicPathStyle</span><span class="p">:</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                 <span class="n">stroke_style</span><span class="o">=</span><span class="n">StrokeStyle</span><span class="o">.</span><span class="n">SolidLine</span><span class="p">,</span>
-                 <span class="n">line_width</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-                 <span class="n">stroke_color</span><span class="o">=</span><span class="n">Colors</span><span class="o">.</span><span class="n">black</span><span class="p">,</span>
-                 <span class="n">fill_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># only for closed path</span>
-    <span class="p">):</span>
-
-        <span class="sd">&quot;&quot;&quot;*color* can be a defined color name, a &#39;#rrggbb&#39; string or a :class:`Color` instance.</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">stroke_style</span> <span class="o">=</span> <span class="n">stroke_style</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">line_width</span> <span class="o">=</span> <span class="n">line_width</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stroke_color</span> <span class="o">=</span> <span class="n">stroke_color</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fill_color</span> <span class="o">=</span> <span class="n">fill_color</span>
-
-    <span class="c1">##############################################</span>
-
-<div class="viewcode-block" id="GraphicPathStyle.clone"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_style</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_line_width</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_color</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_fill_color</span><span class="p">,</span>
-        <span class="p">)</span></div>
-
-    <span class="c1">##############################################</span>
-
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">&#39;GraphicPathStyle(</span><span class="si">{0._stroke_style}</span><span class="s1">, </span><span class="si">{0._line_width}</span><span class="s1">, </span><span class="si">{0._stroke_color}</span><span class="s1">, </span><span class="si">{0._fill_color}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">stroke_style</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_style</span>
-
-    <span class="nd">@stroke_style</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">stroke_style</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_style</span> <span class="o">=</span> <span class="n">StrokeStyle</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">line_width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_line_width</span>
-
-    <span class="nd">@line_width</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">line_width</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_line_width</span> <span class="o">=</span> <span class="n">value</span> <span class="c1"># Fixme: float ???</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">line_width_as_float</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">line_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_line_width</span>
-        <span class="c1"># Fixme: use scale ?</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">line_width</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">line_width</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">line_width</span> <span class="o">=</span> <span class="n">line_width</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;pt&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-            <span class="n">line_width</span> <span class="o">=</span> <span class="n">line_width</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;px&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">line_width</span><span class="p">)</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">stroke_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_color</span>
-
-    <span class="nd">@stroke_color</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">stroke_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_stroke_color</span> <span class="o">=</span> <span class="n">Colors</span><span class="o">.</span><span class="n">ensure_color</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">fill_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fill_color</span>
-
-    <span class="nd">@fill_color</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">fill_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_fill_color</span> <span class="o">=</span> <span class="n">Colors</span><span class="o">.</span><span class="n">ensure_color</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
-
-<span class="c1">####################################################################################################</span>
-
-<div class="viewcode-block" id="GraphicBezierStyle"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle">[docs]</a><span class="k">class</span> <span class="nc">GraphicBezierStyle</span><span class="p">(</span><span class="n">GraphicPathStyle</span><span class="p">):</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                 <span class="c1"># Fixme: duplicate</span>
-                 <span class="n">stroke_style</span><span class="o">=</span><span class="n">StrokeStyle</span><span class="o">.</span><span class="n">SolidLine</span><span class="p">,</span>
-                 <span class="n">line_width</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-                 <span class="n">stroke_color</span><span class="o">=</span><span class="n">Colors</span><span class="o">.</span><span class="n">black</span><span class="p">,</span>
-                 <span class="n">fill_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># only for closed path</span>
-                 <span class="c1">#</span>
-                 <span class="n">show_control</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                 <span class="n">control_color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="p">):</span>
-
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">stroke_style</span><span class="p">,</span> <span class="n">line_width</span><span class="p">,</span> <span class="n">stroke_color</span><span class="p">,</span> <span class="n">fill_color</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_show_control</span> <span class="o">=</span> <span class="n">show_control</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_control_color</span> <span class="o">=</span> <span class="n">Colors</span><span class="o">.</span><span class="n">ensure_color</span><span class="p">(</span><span class="n">control_color</span><span class="p">)</span>
-
-    <span class="c1">##############################################</span>
-
-<div class="viewcode-block" id="GraphicBezierStyle.clone"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">stroke_style</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">line_width</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">stroke_color</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">fill_color</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_show_control</span><span class="p">,</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_control_color</span><span class="p">,</span>
-        <span class="p">)</span></div>
-
-    <span class="c1">##############################################</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">show_control</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_show_control</span>
-
-    <span class="nd">@show_control</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">show_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_show_control</span> <span class="o">=</span> <span class="n">value</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">control_color</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_control_color</span>
-
-    <span class="nd">@control_color</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">control_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_control_color</span> <span class="o">=</span> <span class="n">value</span></div>
 
 <span class="c1">####################################################################################################</span>
 
@@ -586,11 +445,17 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">stop_angle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stop_angle</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stop_angle</span>
 
     <span class="c1"># @stop_angle.setter</span>
     <span class="c1"># def stop_angle(self, value):</span>
     <span class="c1">#     self._stop_angle = value</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_stop_angle</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_angle</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">360</span></div>
 
 <span class="c1">####################################################################################################</span>
 
@@ -738,17 +603,6 @@
 
 <div class="viewcode-block" id="GraphicItem.distance_to_point"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicItem.distance_to_point">[docs]</a>    <span class="k">def</span> <span class="nf">distance_to_point</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">distance_to_point</span><span class="p">(</span><span class="n">point</span><span class="p">)</span></div></div>
-
-<span class="c1">####################################################################################################</span>
-
-<div class="viewcode-block" id="Font"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Patro.GraphicEngine.GraphicScene.GraphicItem.Font">[docs]</a><span class="k">class</span> <span class="nc">Font</span><span class="p">:</span>
-
-    <span class="c1">##############################################</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="n">point_size</span><span class="p">):</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">family</span> <span class="o">=</span> <span class="n">family</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">point_size</span> <span class="o">=</span> <span class="n">point_size</span></div>
 
 <span class="c1">####################################################################################################</span>
 

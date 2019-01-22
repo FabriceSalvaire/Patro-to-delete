@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -318,7 +319,7 @@
 
 <span class="c1">####################################################################################################</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Colors&#39;</span><span class="p">,</span> <span class="s1">&#39;StrokeStyle&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Colors&#39;</span><span class="p">,</span> <span class="s1">&#39;StrokeStyle&#39;</span><span class="p">,</span> <span class="s1">&#39;CapStyle&#39;</span><span class="p">,</span> <span class="s1">&#39;JoinStyle&#39;</span><span class="p">]</span>
 
 <span class="c1">####################################################################################################</span>
 
@@ -333,12 +334,41 @@
 
      <span class="sd">&quot;&quot;&quot;Enum class to define stroke styles&quot;&quot;&quot;</span>
 
-     <span class="n">NoPen</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+     <span class="n">NoPen</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span> <span class="c1"># Inivisble ?</span>
      <span class="n">SolidLine</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
      <span class="n">DashLine</span> <span class="o">=</span>	<span class="n">auto</span><span class="p">()</span>
      <span class="n">DotLine</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
      <span class="n">DashDotLine</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
      <span class="n">DashDotDotLine</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+     <span class="c1"># Custom</span>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="CapStyle"><a class="viewcode-back" href="../../api/Patro/GraphicStyle.html#Patro.GraphicStyle.CapStyle">[docs]</a><span class="k">class</span> <span class="nc">CapStyle</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+     <span class="sd">&quot;&quot;&quot;Enum class to define cap styles&quot;&quot;&quot;</span>
+
+     <span class="c1">#: a square line end that does not cover the end point of the line</span>
+     <span class="n">FlatCap</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+     <span class="c1">#: a square line end that covers the end point and extends beyond it by half the line width</span>
+     <span class="n">SquareCap</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+     <span class="c1">#: a rounded line end.</span>
+     <span class="n">RoundCap</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="JoinStyle"><a class="viewcode-back" href="../../api/Patro/GraphicStyle.html#Patro.GraphicStyle.JoinStyle">[docs]</a><span class="k">class</span> <span class="nc">JoinStyle</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+     <span class="sd">&quot;&quot;&quot;Enum class to define join styles&quot;&quot;&quot;</span>
+
+     <span class="c1">#! The outer edges of the lines are extended to meet at an angle, and this area is filled.</span>
+     <span class="n">MiterJoin</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+     <span class="c1">#: The triangular notch between the two lines is filled.</span>
+     <span class="n">BevelJoin</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+     <span class="c1">#: A circular arc between the two lines is filled.</span>
+     <span class="n">RoundJoin</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+     <span class="c1">#: A miter join corresponding to the definition of a miter join in the SVG 1.2 Tiny specification.</span>
+     <span class="n">SvgMiterJoin</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
 </pre></div>
 
            </div>

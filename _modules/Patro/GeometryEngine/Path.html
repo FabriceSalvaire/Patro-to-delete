@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -342,6 +343,11 @@
 
     <span class="c1">##############################################</span>
 
+    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="c1">##############################################</span>
+
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
 
@@ -373,6 +379,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">start_point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Fixme: cache ???</span>
         <span class="n">prev_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prev_part</span>
         <span class="k">if</span> <span class="n">prev_part</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">prev_part</span><span class="o">.</span><span class="n">stop_point</span>
@@ -443,10 +450,16 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prev_part</span><span class="p">,</span> <span class="n">LinearSegment</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Previous path segment must be linear&#39;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_bulge_angle</span> <span class="o">=</span> <span class="kc">None</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_bulge_center</span> <span class="o">=</span> <span class="kc">None</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_start_bulge_point</span> <span class="o">=</span> <span class="kc">None</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_stop_bulge_point</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_reset_cache</span><span class="p">()</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">_reset_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bulge_angle</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bulge_center</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_start_bulge_point</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_bulge_point</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="c1">##############################################</span>
 
@@ -565,6 +578,18 @@
 
     <span class="c1">##############################################</span>
 
+    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_absolute</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_point</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span>
+
+    <span class="c1">##############################################</span>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point</span>
@@ -603,6 +628,18 @@
 
     <span class="c1">##############################################</span>
 
+    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="c1"># Since a rotation will change the direction</span>
+        <span class="c1"># DirectionalSegment must be casted to PathSegment</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_length</span>
@@ -614,9 +651,14 @@
     <span class="c1">##############################################</span>
 
     <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">offset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Fixme: cache ???</span>
+        <span class="k">return</span> <span class="n">Vector2D</span><span class="o">.</span><span class="n">from_polar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__angle__</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">stop_point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Fixme: cache ???</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_point</span> <span class="o">+</span> <span class="n">Vector2D</span><span class="o">.</span><span class="n">from_polar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__angle__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_point</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span>
 
     <span class="c1">##############################################</span>
 
@@ -624,6 +666,11 @@
     <span class="k">def</span> <span class="nf">geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Fixme: cache ???</span>
         <span class="k">return</span> <span class="n">Segment2D</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_point</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_point</span><span class="p">)</span>
+
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">to_path_segment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">PathSegment</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">offset</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1">####################################################################################################</span>
 
@@ -677,6 +724,12 @@
     <span class="k">def</span> <span class="nf">point2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_point2</span> <span class="o">=</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
+    <span class="c1">##############################################</span>
+
+    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_point1</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_point2</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point2</span>
+
 <span class="c1">####################################################################################################</span>
 
 <div class="viewcode-block" id="QuadraticBezierSegment"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.QuadraticBezierSegment">[docs]</a><span class="k">class</span> <span class="nc">QuadraticBezierSegment</span><span class="p">(</span><span class="n">PathPart</span><span class="p">,</span> <span class="n">TwoPointsMixin</span><span class="p">):</span>
@@ -691,6 +744,11 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">point1</span> <span class="o">=</span> <span class="n">point1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">point2</span> <span class="o">=</span> <span class="n">point2</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="QuadraticBezierSegment.clone"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.QuadraticBezierSegment.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point2</span><span class="p">)</span></div>
 
     <span class="c1">##############################################</span>
 
@@ -722,6 +780,17 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">point1</span> <span class="o">=</span> <span class="n">point1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">point2</span> <span class="o">=</span> <span class="n">point2</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">point3</span> <span class="o">=</span> <span class="n">point3</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="CubicBezierSegment.clone"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.CubicBezierSegment.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_position</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point3</span><span class="p">)</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="CubicBezierSegment.apply_transformation"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.CubicBezierSegment.apply_transformation">[docs]</a>    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="n">TwoPointsMixin</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_point3</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_point3</span></div>
 
     <span class="c1">##############################################</span>
 
@@ -766,6 +835,19 @@
 
     <span class="c1">##############################################</span>
 
+<div class="viewcode-block" id="Path2D.clone"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.Path2D.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_p0</span><span class="p">)</span>
+
+        <span class="c1"># parts must be added sequentially to the path for bulge check</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_parts</span>
+        <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parts</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+    <span class="c1">##############################################</span>
+
     <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parts</span><span class="p">)</span>
 
@@ -789,6 +871,22 @@
         <span class="n">obj</span> <span class="o">=</span> <span class="n">part_cls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parts</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">obj</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Path2D.apply_transformation"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Path.html#Patro.GeometryEngine.Path.Path2D.apply_transformation">[docs]</a>    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_p0</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_p0</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">part</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parts</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">PathSegment</span><span class="p">):</span>
+                <span class="n">part</span><span class="o">.</span><span class="n">_reset_cache</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">DirectionalSegment</span><span class="p">):</span>
+                <span class="c1"># Since a rotation will change the direction</span>
+                <span class="c1"># DirectionalSegment must be casted to PathSegment</span>
+                <span class="n">part</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">to_path_segment</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_parts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">part</span>
+            <span class="n">part</span><span class="o">.</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">transformation</span><span class="p">)</span></div>
 
     <span class="c1">##############################################</span>
 

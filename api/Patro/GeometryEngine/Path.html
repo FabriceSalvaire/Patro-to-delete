@@ -152,8 +152,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Config.html">9.1.2. Config</a><ul>
@@ -381,6 +382,11 @@ prime P_1 = P_1 + d_1 times frac{R}{tan alpha}</div></blockquote>
 <dt id="Patro.GeometryEngine.Path.QuadraticBezierSegment">
 <em class="property">class </em><code class="descclassname">Patro.GeometryEngine.Path.</code><code class="descname">QuadraticBezierSegment</code><span class="sig-paren">(</span><em>path</em>, <em>position</em>, <em>point1</em>, <em>point2</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#QuadraticBezierSegment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.QuadraticBezierSegment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GeometryEngine.Path.PathPart</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GeometryEngine.Path.TwoPointsMixin</span></code></p>
+<dl class="method">
+<dt id="Patro.GeometryEngine.Path.QuadraticBezierSegment.clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#QuadraticBezierSegment.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.QuadraticBezierSegment.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="Patro.GeometryEngine.Path.QuadraticBezierSegment.geometry">
 <code class="descname">geometry</code><a class="headerlink" href="#Patro.GeometryEngine.Path.QuadraticBezierSegment.geometry" title="Permalink to this definition">¶</a></dt>
@@ -402,6 +408,16 @@ prime P_1 = P_1 + d_1 times frac{R}{tan alpha}</div></blockquote>
 <dt id="Patro.GeometryEngine.Path.CubicBezierSegment">
 <em class="property">class </em><code class="descclassname">Patro.GeometryEngine.Path.</code><code class="descname">CubicBezierSegment</code><span class="sig-paren">(</span><em>path</em>, <em>position</em>, <em>point1</em>, <em>point2</em>, <em>point3</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#CubicBezierSegment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.CubicBezierSegment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GeometryEngine.Path.PathPart</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GeometryEngine.Path.TwoPointsMixin</span></code></p>
+<dl class="method">
+<dt id="Patro.GeometryEngine.Path.CubicBezierSegment.apply_transformation">
+<code class="descname">apply_transformation</code><span class="sig-paren">(</span><em>transformation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#CubicBezierSegment.apply_transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.CubicBezierSegment.apply_transformation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.GeometryEngine.Path.CubicBezierSegment.clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#CubicBezierSegment.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.CubicBezierSegment.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="Patro.GeometryEngine.Path.CubicBezierSegment.geometry">
 <code class="descname">geometry</code><a class="headerlink" href="#Patro.GeometryEngine.Path.CubicBezierSegment.geometry" title="Permalink to this definition">¶</a></dt>
@@ -429,6 +445,18 @@ prime P_1 = P_1 + d_1 times frac{R}{tan alpha}</div></blockquote>
 <em class="property">class </em><code class="descclassname">Patro.GeometryEngine.Path.</code><code class="descname">Path2D</code><span class="sig-paren">(</span><em>start_point</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#Path2D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.Path2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="Primitive.html#Patro.GeometryEngine.Primitive.Primitive2DMixin" title="Patro.GeometryEngine.Primitive.Primitive2DMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GeometryEngine.Primitive.Primitive2DMixin</span></code></a>, <a class="reference internal" href="Primitive.html#Patro.GeometryEngine.Primitive.Primitive1P" title="Patro.GeometryEngine.Primitive.Primitive1P"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GeometryEngine.Primitive.Primitive1P</span></code></a></p>
 <p>Class to implements 2D Path.</p>
+<dl class="method">
+<dt id="Patro.GeometryEngine.Path.Path2D.apply_transformation">
+<code class="descname">apply_transformation</code><span class="sig-paren">(</span><em>transformation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#Path2D.apply_transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.Path2D.apply_transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a transformation to the primitive.</p>
+<p>If <em>clone</em> is set then the primitive is cloned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Patro.GeometryEngine.Path.Path2D.clone">
+<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#Path2D.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.Path2D.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="Patro.GeometryEngine.Path.Path2D.close">
 <code class="descname">close</code><span class="sig-paren">(</span><em>radius=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Path.html#Path2D.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Path.Path2D.close" title="Permalink to this definition">¶</a></dt>

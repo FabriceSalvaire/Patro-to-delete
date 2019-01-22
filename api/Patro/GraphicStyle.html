@@ -152,8 +152,9 @@
 <li class="toctree-l4"><a class="reference internal" href="Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Config.html">9.1.2. Config</a><ul>
@@ -344,6 +345,61 @@
 <dt id="Patro.GraphicStyle.StrokeStyle.SolidLine">
 <code class="descname">SolidLine</code><em class="property"> = 2</em><a class="headerlink" href="#Patro.GraphicStyle.StrokeStyle.SolidLine" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.GraphicStyle.CapStyle">
+<em class="property">class </em><code class="descclassname">Patro.GraphicStyle.</code><code class="descname">CapStyle</code><a class="reference internal" href="../../_modules/Patro/GraphicStyle.html#CapStyle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicStyle.CapStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Enum class to define cap styles</p>
+<dl class="attribute">
+<dt id="Patro.GraphicStyle.CapStyle.FlatCap">
+<code class="descname">FlatCap</code><em class="property"> = 1</em><a class="headerlink" href="#Patro.GraphicStyle.CapStyle.FlatCap" title="Permalink to this definition">¶</a></dt>
+<dd><p>a square line end that does not cover the end point of the line</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.GraphicStyle.CapStyle.RoundCap">
+<code class="descname">RoundCap</code><em class="property"> = 3</em><a class="headerlink" href="#Patro.GraphicStyle.CapStyle.RoundCap" title="Permalink to this definition">¶</a></dt>
+<dd><p>a rounded line end.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.GraphicStyle.CapStyle.SquareCap">
+<code class="descname">SquareCap</code><em class="property"> = 2</em><a class="headerlink" href="#Patro.GraphicStyle.CapStyle.SquareCap" title="Permalink to this definition">¶</a></dt>
+<dd><p>a square line end that covers the end point and extends beyond it by half the line width</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Patro.GraphicStyle.JoinStyle">
+<em class="property">class </em><code class="descclassname">Patro.GraphicStyle.</code><code class="descname">JoinStyle</code><a class="reference internal" href="../../_modules/Patro/GraphicStyle.html#JoinStyle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicStyle.JoinStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Enum class to define join styles</p>
+<dl class="attribute">
+<dt id="Patro.GraphicStyle.JoinStyle.BevelJoin">
+<code class="descname">BevelJoin</code><em class="property"> = 2</em><a class="headerlink" href="#Patro.GraphicStyle.JoinStyle.BevelJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>The triangular notch between the two lines is filled.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.GraphicStyle.JoinStyle.MiterJoin">
+<code class="descname">MiterJoin</code><em class="property"> = 1</em><a class="headerlink" href="#Patro.GraphicStyle.JoinStyle.MiterJoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.GraphicStyle.JoinStyle.RoundJoin">
+<code class="descname">RoundJoin</code><em class="property"> = 3</em><a class="headerlink" href="#Patro.GraphicStyle.JoinStyle.RoundJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>A circular arc between the two lines is filled.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Patro.GraphicStyle.JoinStyle.SvgMiterJoin">
+<code class="descname">SvgMiterJoin</code><em class="property"> = 4</em><a class="headerlink" href="#Patro.GraphicStyle.JoinStyle.SvgMiterJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>A miter join corresponding to the definition of a miter join in the SVG 1.2 Tiny specification.</p>
+</dd></dl>
 
 </dd></dl>
 

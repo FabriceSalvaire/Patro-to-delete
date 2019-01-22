@@ -12,6 +12,7 @@
     Common/Math
     Common/Object
     Common/Path
+    Common/Platform
     Common/Singleton
     Common/Xml
 

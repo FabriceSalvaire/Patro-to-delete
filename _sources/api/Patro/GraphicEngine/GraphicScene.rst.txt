@@ -5,6 +5,7 @@
 
 .. toctree::
     GraphicScene/GraphicItem
+    GraphicScene/GraphicStyle
     GraphicScene/Scene
     GraphicScene/TypographyUnit
 

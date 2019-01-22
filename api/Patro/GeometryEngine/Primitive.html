@@ -152,8 +152,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Config.html">9.1.2. Config</a><ul>
@@ -306,6 +307,13 @@
 <em class="property">class </em><code class="descclassname">Patro.GeometryEngine.Primitive.</code><code class="descname">Primitive</code><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Base class for geometric primitive</p>
+<dl class="method">
+<dt id="Patro.GeometryEngine.Primitive.Primitive.apply_transformation">
+<code class="descname">apply_transformation</code><span class="sig-paren">(</span><em>transformation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.apply_transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.apply_transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a transformation to the primitive.</p>
+<p>If <em>clone</em> is set then the primitive is cloned.</p>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="Patro.GeometryEngine.Primitive.Primitive.bounding_box">
 <code class="descname">bounding_box</code><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.bounding_box" title="Permalink to this definition">¶</a></dt>
@@ -352,6 +360,11 @@
 <dd><p>True if the order of the points is reversible</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="Patro.GeometryEngine.Primitive.Primitive.mirror">
+<code class="descname">mirror</code><span class="sig-paren">(</span><em>clone=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.mirror"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.mirror" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="Patro.GeometryEngine.Primitive.Primitive.number_of_points">
 <code class="descname">number_of_points</code><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.number_of_points" title="Permalink to this definition">¶</a></dt>
@@ -369,8 +382,30 @@
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="Patro.GeometryEngine.Primitive.Primitive.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>angle</em>, <em>clone=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.rotate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.rotate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.GeometryEngine.Primitive.Primitive.scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>x_factor</em>, <em>y_factor=None</em>, <em>clone=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="Patro.GeometryEngine.Primitive.Primitive.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>transformation</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.transform" title="Permalink to this definition">¶</a></dt>
+<code class="descname">transform</code><span class="sig-paren">(</span><em>transformation</em>, <em>clone=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a transformation to the primitive.</p>
+<p>If <em>clone</em> is set then the primitive is cloned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Patro.GeometryEngine.Primitive.Primitive.x_mirror">
+<code class="descname">x_mirror</code><span class="sig-paren">(</span><em>clone=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.x_mirror"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.x_mirror" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Patro.GeometryEngine.Primitive.Primitive.y_mirror">
+<code class="descname">y_mirror</code><span class="sig-paren">(</span><em>clone=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/Patro/GeometryEngine/Primitive.html#Primitive.y_mirror"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GeometryEngine.Primitive.Primitive.y_mirror" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

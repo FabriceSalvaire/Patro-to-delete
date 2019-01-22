@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -320,7 +321,7 @@
 
 <span class="kn">from</span> <span class="nn">QtShim.QtCore</span> <span class="k">import</span> <span class="p">(</span>
     <span class="n">Property</span><span class="p">,</span> <span class="n">Signal</span><span class="p">,</span> <span class="n">Slot</span><span class="p">,</span> <span class="n">QObject</span><span class="p">,</span>
-    <span class="n">QRectF</span><span class="p">,</span> <span class="n">QSizeF</span><span class="p">,</span> <span class="n">QPointF</span><span class="p">,</span> <span class="n">Qt</span><span class="p">,</span>
+    <span class="n">QRectF</span><span class="p">,</span> <span class="n">QSize</span><span class="p">,</span> <span class="n">QSizeF</span><span class="p">,</span> <span class="n">QPointF</span><span class="p">,</span> <span class="n">Qt</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">QtShim.QtGui</span> <span class="k">import</span> <span class="n">QColor</span><span class="p">,</span> <span class="n">QFont</span><span class="p">,</span> <span class="n">QFontMetrics</span><span class="p">,</span> <span class="n">QImage</span><span class="p">,</span> <span class="n">QPainter</span><span class="p">,</span> <span class="n">QPainterPath</span><span class="p">,</span> <span class="n">QBrush</span><span class="p">,</span> <span class="n">QPen</span>
 <span class="c1"># from QtShim.QtQml import qmlRegisterType</span>
@@ -329,7 +330,7 @@
 <span class="kn">from</span> <span class="nn">.Painter</span> <span class="k">import</span> <span class="n">Painter</span>
 <span class="kn">from</span> <span class="nn">Patro.GeometryEngine.Vector</span> <span class="k">import</span> <span class="n">Vector2D</span>
 <span class="kn">from</span> <span class="nn">Patro.GraphicEngine.GraphicScene.Scene</span> <span class="k">import</span> <span class="n">GraphicScene</span>
-<span class="kn">from</span> <span class="nn">Patro.GraphicStyle</span> <span class="k">import</span> <span class="n">StrokeStyle</span>
+<span class="kn">from</span> <span class="nn">Patro.GraphicStyle</span> <span class="k">import</span> <span class="n">StrokeStyle</span><span class="p">,</span> <span class="n">CapStyle</span><span class="p">,</span> <span class="n">JoinStyle</span>
 
 <span class="c1">####################################################################################################</span>
 
@@ -360,6 +361,19 @@
         <span class="n">StrokeStyle</span><span class="o">.</span><span class="n">DotLine</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">DotLine</span><span class="p">,</span>
         <span class="n">StrokeStyle</span><span class="o">.</span><span class="n">DashDotLine</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">DashDotLine</span><span class="p">,</span>
         <span class="n">StrokeStyle</span><span class="o">.</span><span class="n">DashDotDotLine</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">DashDotDotLine</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">__CAP_STYLE__</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">CapStyle</span><span class="o">.</span><span class="n">FlatCap</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">FlatCap</span><span class="p">,</span>
+        <span class="n">CapStyle</span><span class="o">.</span><span class="n">SquareCap</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">SquareCap</span><span class="p">,</span>
+        <span class="n">CapStyle</span><span class="o">.</span><span class="n">RoundCap</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">RoundCap</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">__JOIN_STYLE__</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">JoinStyle</span><span class="o">.</span><span class="n">MiterJoin</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">MiterJoin</span><span class="p">,</span>
+        <span class="n">JoinStyle</span><span class="o">.</span><span class="n">BevelJoin</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">BevelJoin</span><span class="p">,</span>
+        <span class="n">JoinStyle</span><span class="o">.</span><span class="n">RoundJoin</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">RoundJoin</span><span class="p">,</span>
+        <span class="n">JoinStyle</span><span class="o">.</span><span class="n">SvgMiterJoin</span><span class="p">:</span> <span class="n">Qt</span><span class="o">.</span><span class="n">SvgMiterJoin</span><span class="p">,</span>
     <span class="p">}</span>
 
     <span class="n">_logger</span> <span class="o">=</span> <span class="n">_module_logger</span><span class="o">.</span><span class="n">getChild</span><span class="p">(</span><span class="s1">&#39;QtPainter&#39;</span><span class="p">)</span>
@@ -398,6 +412,38 @@
 
     <span class="c1">##############################################</span>
 
+<div class="viewcode-block" id="QtPainter.to_svg"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtPainter.to_svg">[docs]</a>    <span class="k">def</span> <span class="nf">to_svg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;Render the scene to SVG&quot;&quot;&quot;</span>
+
+        <span class="kn">from</span> <span class="nn">QtShim.QtSvg</span> <span class="k">import</span> <span class="n">QSvgGenerator</span>
+
+        <span class="n">generator</span> <span class="o">=</span> <span class="n">QSvgGenerator</span><span class="p">()</span>
+        <span class="n">generator</span><span class="o">.</span><span class="n">setFileName</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+
+        <span class="n">generator</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+        <span class="n">generator</span><span class="o">.</span><span class="n">setDescription</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">description</span><span class="p">))</span>
+        <span class="n">generator</span><span class="o">.</span><span class="n">setResolution</span><span class="p">(</span><span class="n">dpi</span><span class="p">)</span>
+
+        <span class="c1"># Fixme: scale</span>
+        <span class="c1"># Scale applied to (x,y) and radius but not line with</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span> <span class="o">=</span> <span class="n">scale</span>
+
+        <span class="n">bounding_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scene</span><span class="o">.</span><span class="n">bounding_box</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">QSize</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bounding_box</span><span class="o">.</span><span class="n">size</span><span class="p">])</span>
+        <span class="n">view_box</span> <span class="o">=</span> <span class="n">QRectF</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_scale</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bounding_box</span><span class="o">.</span><span class="n">rect</span><span class="p">])</span>
+        <span class="n">generator</span><span class="o">.</span><span class="n">setSize</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">generator</span><span class="o">.</span><span class="n">setViewBox</span><span class="p">(</span><span class="n">view_box</span><span class="p">)</span>
+
+        <span class="n">painter</span> <span class="o">=</span> <span class="n">QPainter</span><span class="p">()</span>
+        <span class="n">painter</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="n">generator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">paint</span><span class="p">(</span><span class="n">painter</span><span class="p">)</span>
+        <span class="n">painter</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+    <span class="c1">##############################################</span>
+
 <div class="viewcode-block" id="QtPainter.paint"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtPainter.paint">[docs]</a>    <span class="k">def</span> <span class="nf">paint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">painter</span><span class="p">):</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;paint&#39;</span><span class="p">)</span>
@@ -410,15 +456,16 @@
     <span class="c1">##############################################</span>
 
 <div class="viewcode-block" id="QtPainter.length_scene_to_viewport"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtPainter.length_scene_to_viewport">[docs]</a>    <span class="k">def</span> <span class="nf">length_scene_to_viewport</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+        <span class="k">return</span> <span class="n">length</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">scene_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="k">return</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="QtPainter.scene_to_viewport"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.QtPainter.scene_to_viewport">[docs]</a>    <span class="k">def</span> <span class="nf">scene_to_viewport</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">QPointF</span><span class="p">(</span><span class="n">position</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">,</span> <span class="n">position</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scale</span><span class="p">)</span></div>
+
         <span class="c1"># Note: painter.scale apply to text as well</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
         <span class="c1"># point = QPointF(position.x, position.y)</span>
         <span class="c1"># point += self._translation</span>
@@ -448,6 +495,7 @@
             <span class="n">color</span> <span class="o">=</span> <span class="n">path_syle</span><span class="o">.</span><span class="n">stroke_color</span>
             <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">color</span> <span class="o">=</span> <span class="n">QColor</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">color</span><span class="p">))</span>
+                <span class="n">color</span><span class="o">.</span><span class="n">setAlphaF</span><span class="p">(</span><span class="n">path_syle</span><span class="o">.</span><span class="n">stroke_alpha</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">line_style</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__STROKE_STYLE__</span><span class="p">[</span><span class="n">path_syle</span><span class="o">.</span><span class="n">stroke_style</span><span class="p">]</span>
@@ -457,34 +505,41 @@
         <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">selected</span><span class="p">:</span>
             <span class="n">line_width</span> <span class="o">*=</span> <span class="mi">4</span>
 
+        <span class="n">fill_color</span> <span class="o">=</span> <span class="n">path_syle</span><span class="o">.</span><span class="n">fill_color</span>
+        <span class="k">if</span> <span class="n">fill_color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">QColor</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fill_color</span><span class="p">))</span>
+            <span class="n">color</span><span class="o">.</span><span class="n">setAlphaF</span><span class="p">(</span><span class="n">path_syle</span><span class="o">.</span><span class="n">fill_alpha</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">setBrush</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="c1"># return None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">setBrush</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">NoBrush</span><span class="p">)</span>
+
         <span class="c1"># print(item, color, line_style)</span>
         <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">line_style</span> <span class="ow">is</span> <span class="n">StrokeStyle</span><span class="o">.</span><span class="n">NoPen</span><span class="p">:</span>
             <span class="c1"># invisible item</span>
             <span class="n">pen</span> <span class="o">=</span> <span class="n">QPen</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">NoPen</span><span class="p">)</span>
             <span class="c1"># print(&#39;Warning Pen:&#39;, item, item.user_data, color, line_style)</span>
+            <span class="k">return</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">pen</span> <span class="o">=</span> <span class="n">QPen</span><span class="p">(</span>
                 <span class="n">QBrush</span><span class="p">(</span><span class="n">color</span><span class="p">),</span>
                 <span class="n">line_width</span><span class="p">,</span>
                 <span class="n">line_style</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__CAP_STYLE__</span><span class="p">[</span><span class="n">path_syle</span><span class="o">.</span><span class="n">cap_style</span><span class="p">],</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__JOIN_STYLE__</span><span class="p">[</span><span class="n">path_syle</span><span class="o">.</span><span class="n">join_style</span><span class="p">],</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">setPen</span><span class="p">(</span><span class="n">pen</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">pen</span>
-
-        <span class="n">fill_color</span> <span class="o">=</span> <span class="n">path_syle</span><span class="o">.</span><span class="n">fill_color</span>
-        <span class="k">if</span> <span class="n">fill_color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">color</span> <span class="o">=</span> <span class="n">QColor</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fill_color</span><span class="p">))</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">setBrush</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">setBrush</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">NoBrush</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="kc">None</span>
 
     <span class="c1">##############################################</span>
 
     <span class="k">def</span> <span class="nf">_paint_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene_area</span>
+        <span class="c1"># Fixme:</span>
+        <span class="k">if</span> <span class="n">area</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
         <span class="n">xinf</span><span class="p">,</span> <span class="n">xsup</span> <span class="o">=</span> <span class="n">area</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">sup</span>
         <span class="n">yinf</span><span class="p">,</span> <span class="n">ysup</span> <span class="o">=</span> <span class="n">area</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">sup</span>
 
@@ -539,16 +594,20 @@
 
         <span class="n">pen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set_pen</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
-        <span class="n">rectangle</span> <span class="o">=</span> <span class="n">QRectF</span><span class="p">(</span>
-            <span class="n">center</span> <span class="o">+</span> <span class="n">QPointF</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span> <span class="n">radius</span><span class="p">),</span>
-            <span class="n">center</span> <span class="o">+</span> <span class="n">QPointF</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="o">-</span><span class="n">radius</span><span class="p">),</span>
-        <span class="p">)</span>
-        <span class="n">start_angle</span><span class="p">,</span> <span class="n">stop_angle</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">angle</span><span class="o">*</span><span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">start_angle</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">stop_angle</span><span class="p">)]</span>
-        <span class="n">span_angle</span> <span class="o">=</span> <span class="n">stop_angle</span> <span class="o">-</span> <span class="n">start_angle</span>
-        <span class="k">if</span> <span class="n">span_angle</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">span_angle</span> <span class="o">=</span> <span class="mi">5760</span> <span class="o">+</span> <span class="n">span_angle</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">drawArc</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">,</span> <span class="n">span_angle</span><span class="p">)</span></div>
-        <span class="c1">## self._painter.drawArc(center.x, center.y, radius, radius, 0, 360)</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">is_closed</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">drawEllipse</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># drawArc cannot be filled !</span>
+            <span class="n">rectangle</span> <span class="o">=</span> <span class="n">QRectF</span><span class="p">(</span>
+                <span class="n">center</span> <span class="o">+</span> <span class="n">QPointF</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span> <span class="n">radius</span><span class="p">),</span>
+                <span class="n">center</span> <span class="o">+</span> <span class="n">QPointF</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="o">-</span><span class="n">radius</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="n">start_angle</span><span class="p">,</span> <span class="n">stop_angle</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">angle</span><span class="o">*</span><span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">start_angle</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">stop_angle</span><span class="p">)]</span>
+            <span class="n">span_angle</span> <span class="o">=</span> <span class="n">stop_angle</span> <span class="o">-</span> <span class="n">start_angle</span>
+            <span class="k">if</span> <span class="n">span_angle</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">span_angle</span> <span class="o">=</span> <span class="mi">5760</span> <span class="o">+</span> <span class="n">span_angle</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_painter</span><span class="o">.</span><span class="n">drawArc</span><span class="p">(</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">,</span> <span class="n">span_angle</span><span class="p">)</span></div>
+            <span class="c1"># self._painter.drawArc(center.x, center.y, radius, radius, start_angle, stop_angle)</span>
 
     <span class="c1">##############################################</span>
 
@@ -772,6 +831,7 @@
 
 <div class="viewcode-block" id="ViewportArea.fit_scene"><a class="viewcode-back" href="../../../../api/Patro/GraphicEngine/Painter/QtPainter.html#Patro.GraphicEngine.Painter.QtPainter.ViewportArea.fit_scene">[docs]</a>    <span class="k">def</span> <span class="nf">fit_scene</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
+        <span class="c1"># Fixme: AttributeError: &#39;NoneType&#39; object has no attribute &#39;center&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="p">:</span>
             <span class="n">center</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scene_area</span><span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
             <span class="n">scale</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_scale_to_fit_scene</span><span class="p">()</span>

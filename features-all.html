@@ -152,8 +152,9 @@
 <li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -358,13 +359,27 @@ graphic items like text, image line, circle and Bézier curve.</p>
 engine is able to render on the following:</p>
 <ul class="simple">
 <li>show drawing on screen with : <a class="reference external" href="https://matplotlib.org">Matplotlib</a>, <a class="reference external" href="https://www.qt.io">Qt</a></li>
-<li>export drawing to : PDF, SVG, DXF, LaTeX Tikz</li>
-<li>export tiled pattern on A4 sheets : PDF, LaTeX Tikz</li>
+<li>export drawing to : SVG, PDF, DXF, LaTeX <a class="reference external" href="https://ctan.org/pkg/pgf?lang=en">Tikz</a></li>
+<li>export tiled pattern on A4 sheets : PDF, LaTeX <a class="reference external" href="https://ctan.org/pkg/pgf?lang=en">Tikz</a></li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">PDF and SVG format are convertible to each other without data loss
+(font handling require more attention).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference external" href="https://inkscape.org">Inkscape</a> free software is able to import from / export to a lot of file formats
+like SVG, PDF, DXF and to render the drawing to an image format.  This job can be done in
+batch from command line.</p>
+</div>
 <p>Also the graphic engine is able to render a DXF made of these graphic items: line, circle, arc,
 ellipse, lwpolyline and spline.</p>
+<p>For expert, the LaTeX output can be used to modify the drawing using the power of the <a class="reference external" href="https://ctan.org/pkg/pgf?lang=en">Tikz</a> (PGF)
+graphic package.</p>
 <p>Implementation details:</p>
 <ul class="simple">
+<li>SVG can be rendered using the SVG and Qt painter</li>
 <li>PDF export is implemented with the help of the <a class="reference external" href="https://www.reportlab.com/opensource">Reportlab</a> package</li>
 <li>DXF import/export is implemented with the help of the <a class="reference external" href="https://ezdxf.readthedocs.io/en/latest">ezdxf</a> package of <a class="reference external" href="https://github.com/mozman">Manfred Moitzi</a></li>
 </ul>

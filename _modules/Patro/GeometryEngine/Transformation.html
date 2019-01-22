@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -312,11 +313,29 @@
 
 <span class="c1">####################################################################################################</span>
 
+<span class="kn">from</span> <span class="nn">enum</span> <span class="k">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">radians</span><span class="p">,</span> <span class="n">degrees</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">.Vector</span> <span class="k">import</span> <span class="n">Vector2D</span><span class="p">,</span> <span class="n">HomogeneousVector2D</span>
+
+<span class="c1">####################################################################################################</span>
+
+<div class="viewcode-block" id="TransformationType"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.TransformationType">[docs]</a><span class="k">class</span> <span class="nc">TransformationType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+
+    <span class="n">Identity</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+
+    <span class="n">Scale</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span> <span class="c1"># same scale factor across axes</span>
+    <span class="n">Shear</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span> <span class="c1"># different scale factor</span>
+
+    <span class="n">Parity</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">XParity</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">YParity</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+
+    <span class="n">Rotation</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+
+    <span class="n">Generic</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
 
 <span class="c1">####################################################################################################</span>
 
@@ -329,12 +348,11 @@
 
 <div class="viewcode-block" id="Transformation.Identity"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation.Identity">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">Identity</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__size__</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__size__</span><span class="p">),</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Identity</span><span class="p">)</span></div>
 
     <span class="c1">##############################################</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">transformation_type</span><span class="o">=</span><span class="n">TransformationType</span><span class="o">.</span><span class="n">Generic</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Transformation</span><span class="p">):</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">same_dimension</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
@@ -349,7 +367,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">__size__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size__</span><span class="p">))</span>
             <span class="n">array</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">transformation_type</span>
 
     <span class="c1">##############################################</span>
 
@@ -364,6 +384,10 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_m</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span>
 
     <span class="c1">##############################################</span>
 
@@ -390,6 +414,14 @@
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Vector2D</span><span class="p">):</span>
             <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_m</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">v</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">Vector2D</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="c1"># Scalar can only be scaled if the frame is not sheared</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">in</span> <span class="p">(</span><span class="n">TransformationType</span><span class="o">.</span><span class="n">Identity</span><span class="p">,</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Rotation</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">obj</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">TransformationType</span><span class="o">.</span><span class="n">Shear</span><span class="p">,</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Generic</span><span class="p">):</span>
+                <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_m</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">obj</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Transformation is sheared&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span>
 
@@ -398,7 +430,22 @@
     <span class="k">def</span> <span class="nf">__imul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Transformation</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_m</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">_type</span> <span class="o">!=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Identity</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_m</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+                <span class="c1"># Fixme: check matrix value ???</span>
+                <span class="c1">#   usage identity/rotation, scale/parity test</span>
+                <span class="c1">#   metric test ?</span>
+                <span class="c1"># if t in (parity, xparity, yparity) t*t = Id</span>
+                <span class="c1"># if t in (rotation, scale) t*t = t</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">==</span> <span class="n">obj</span><span class="o">.</span><span class="n">_type</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">in</span> <span class="p">(</span><span class="n">TransformationType</span><span class="o">.</span><span class="n">Parity</span><span class="p">,</span>
+                                      <span class="n">TransformationType</span><span class="o">.</span><span class="n">XParity</span><span class="p">,</span>
+                                      <span class="n">TransformationType</span><span class="o">.</span><span class="n">YParity</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Identity</span>
+                    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">TransformationType</span><span class="o">.</span><span class="n">Rotation</span><span class="p">,</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Scale</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Generic</span>
+                <span class="k">else</span><span class="p">:</span> <span class="c1"># shear, generic</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Generic</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span>
 
@@ -420,13 +467,38 @@
         <span class="n">c</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(((</span><span class="n">c</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="p">),</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span>  <span class="n">c</span><span class="p">))))</span></div>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(((</span><span class="n">c</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span><span class="p">),</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span>  <span class="n">c</span><span class="p">))),</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Rotation</span><span class="p">)</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Transformation2D.type_for_scale"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation2D.type_for_scale">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">type_for_scale</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">x_scale</span> <span class="o">==</span> <span class="n">y_scale</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x_scale</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">transformation_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Identity</span>
+            <span class="k">elif</span> <span class="n">x_scale</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">transformation_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Parity</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">transformation_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Scale</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x_scale</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">y_scale</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">transformation_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">XParity</span>
+            <span class="k">elif</span> <span class="n">x_scale</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">y_scale</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">transformation_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">YParity</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">transformation_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Shear</span>
+
+        <span class="k">return</span> <span class="n">transformation_type</span></div>
 
     <span class="c1">##############################################</span>
 
 <div class="viewcode-block" id="Transformation2D.Scale"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Transformation.html#Patro.GeometryEngine.Transformation.Transformation2D.Scale">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">Scale</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(((</span><span class="n">x_scale</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">y_scale</span><span class="p">))))</span></div>
+    <span class="k">def</span> <span class="nf">Scale</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">y_scale</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">y_scale</span> <span class="o">=</span> <span class="n">x_scale</span>
+        <span class="n">transformation_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">type_for_scale</span><span class="p">(</span><span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(((</span><span class="n">x_scale</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">y_scale</span><span class="p">))),</span> <span class="n">transformation_type</span><span class="p">)</span></div>
 
     <span class="c1">##############################################</span>
 
@@ -493,6 +565,7 @@
 
         <span class="n">transformation</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">Identity</span><span class="p">()</span>
         <span class="n">transformation</span><span class="o">.</span><span class="n">matrix_part</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">Transformation2D</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">.</span><span class="n">array</span>
+        <span class="n">transformation</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="n">TransformationType</span><span class="o">.</span><span class="n">Rotation</span>
         <span class="k">return</span> <span class="n">transformation</span></div>
 
     <span class="c1">##############################################</span>
@@ -504,6 +577,7 @@
 
         <span class="n">transformation</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">Identity</span><span class="p">()</span>
         <span class="n">transformation</span><span class="o">.</span><span class="n">matrix_part</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="n">Transformation2D</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">)</span><span class="o">.</span><span class="n">array</span>
+        <span class="n">transformation</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">type_for_scale</span><span class="p">(</span><span class="n">x_scale</span><span class="p">,</span> <span class="n">y_scale</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">transformation</span></div>
 
     <span class="c1">#######################################</span>

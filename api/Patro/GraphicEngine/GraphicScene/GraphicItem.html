@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../../../../static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="9.1.5.1.2. Scene" href="Scene.html" />
+    <link rel="next" title="9.1.5.1.2. GraphicStyle" href="GraphicStyle.html" />
     <link rel="prev" title="9.1.5.1. GraphicScene" href="../GraphicScene.html" /> 
 
   
@@ -152,8 +152,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../Config.html">9.1.2. Config</a><ul>
@@ -369,12 +370,6 @@
 </dd></dl>
 
 <dl class="class">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.Font">
-<em class="property">class </em><code class="descclassname">Patro.GraphicEngine.GraphicScene.GraphicItem.</code><code class="descname">Font</code><span class="sig-paren">(</span><em>family</em>, <em>point_size</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/GraphicScene/GraphicItem.html#Font"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.Font" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-</dd></dl>
-
-<dl class="class">
 <dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.FourPositionMixin">
 <em class="property">class </em><code class="descclassname">Patro.GraphicEngine.GraphicScene.GraphicItem.</code><code class="descname">FourPositionMixin</code><span class="sig-paren">(</span><em>position1</em>, <em>position2</em>, <em>position3</em>, <em>position4</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/GraphicScene/GraphicItem.html#FourPositionMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.FourPositionMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.TwoPositionMixin" title="Patro.GraphicEngine.GraphicScene.GraphicItem.TwoPositionMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GraphicEngine.GraphicScene.GraphicItem.TwoPositionMixin</span></code></a></p>
@@ -391,27 +386,6 @@
 <dl class="attribute">
 <dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.FourPositionMixin.positions">
 <code class="descname">positions</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.FourPositionMixin.positions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle">
-<em class="property">class </em><code class="descclassname">Patro.GraphicEngine.GraphicScene.GraphicItem.</code><code class="descname">GraphicBezierStyle</code><span class="sig-paren">(</span><em>stroke_style=&lt;StrokeStyle.SolidLine: 2&gt;</em>, <em>line_width=1.0</em>, <em>stroke_color=Color(#000000)</em>, <em>fill_color=None</em>, <em>show_control=False</em>, <em>control_color=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/GraphicScene/GraphicItem.html#GraphicBezierStyle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle" title="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle</span></code></a></p>
-<dl class="method">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.clone">
-<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/GraphicScene/GraphicItem.html#GraphicBezierStyle.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.clone" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.control_color">
-<code class="descname">control_color</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.control_color" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.show_control">
-<code class="descname">show_control</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicBezierStyle.show_control" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -483,43 +457,6 @@
 <dl class="attribute">
 <dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicItem.z_value">
 <code class="descname">z_value</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicItem.z_value" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle">
-<em class="property">class </em><code class="descclassname">Patro.GraphicEngine.GraphicScene.GraphicItem.</code><code class="descname">GraphicPathStyle</code><span class="sig-paren">(</span><em>stroke_style=&lt;StrokeStyle.SolidLine: 2&gt;</em>, <em>line_width=1.0</em>, <em>stroke_color=Color(#000000)</em>, <em>fill_color=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/GraphicScene/GraphicItem.html#GraphicPathStyle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p><em>color</em> can be a defined color name, a ‘#rrggbb’ string or a <code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code> instance.</p>
-<dl class="method">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.clone">
-<code class="descname">clone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/GraphicScene/GraphicItem.html#GraphicPathStyle.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.clone" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.fill_color">
-<code class="descname">fill_color</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.fill_color" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.line_width">
-<code class="descname">line_width</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.line_width" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.line_width_as_float">
-<code class="descname">line_width_as_float</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.line_width_as_float" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.stroke_color">
-<code class="descname">stroke_color</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.stroke_color" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.stroke_style">
-<code class="descname">stroke_style</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.GraphicPathStyle.stroke_style" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -621,6 +558,11 @@
 <em class="property">class </em><code class="descclassname">Patro.GraphicEngine.GraphicScene.GraphicItem.</code><code class="descname">StartStopAngleMixin</code><span class="sig-paren">(</span><em>start_angle=0</em>, <em>stop_angle=360</em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Patro/GraphicEngine/GraphicScene/GraphicItem.html#StartStopAngleMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="attribute">
+<dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin.is_closed">
+<code class="descname">is_closed</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin.is_closed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin.start_angle">
 <code class="descname">start_angle</code><a class="headerlink" href="#Patro.GraphicEngine.GraphicScene.GraphicItem.StartStopAngleMixin.start_angle" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -684,7 +626,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Scene.html" class="btn btn-neutral float-right" title="9.1.5.1.2. Scene" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="GraphicStyle.html" class="btn btn-neutral float-right" title="9.1.5.1.2. GraphicStyle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../GraphicScene.html" class="btn btn-neutral" title="9.1.5.1. GraphicScene" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -326,6 +327,8 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">.BoundingBox</span> <span class="k">import</span> <span class="n">bounding_box_from_points</span>
+<span class="c1"># Fixme: circular import</span>
+<span class="c1"># from .Transformation import Transformation2D</span>
 
 <span class="c1">####################################################################################################</span>
 
@@ -384,6 +387,9 @@
 
     <span class="c1">##############################################</span>
 
+    <span class="c1"># Fixme: part of the API imply points</span>
+    <span class="c1">#  it is not true for Path2D</span>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
@@ -430,12 +436,51 @@
 
     <span class="c1">##############################################</span>
 
-<div class="viewcode-block" id="Primitive.transform"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+<div class="viewcode-block" id="Primitive.transform"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Apply a transformation to the primitive.</span>
 
+<span class="sd">        If *clone* is set then the primitive is cloned.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="k">if</span> <span class="n">clone</span> <span class="k">else</span> <span class="bp">self</span>
+        <span class="c1"># for point in obj.points:</span>
+        <span class="c1">#     point *= transformation # don&#39;t work</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">apply_transformation</span><span class="p">(</span><span class="n">transformation</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">obj</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Primitive.apply_transformation"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.apply_transformation">[docs]</a>    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Apply a transformation to the primitive.</span>
+
+<span class="sd">        If *clone* is set then the primitive is cloned.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># for point in self.points:</span>
         <span class="c1">#     point *= transformation # don&#39;t work</span>
-
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_points</span><span class="p">([</span><span class="n">transformation</span><span class="o">*</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">points</span><span class="p">])</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Primitive.mirror"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.mirror">[docs]</a>    <span class="k">def</span> <span class="nf">mirror</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.Transformation</span> <span class="k">import</span> <span class="n">Transformation2D</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Transformation2D</span><span class="o">.</span><span class="n">Parity</span><span class="p">(),</span> <span class="n">clone</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Primitive.x_mirror"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.x_mirror">[docs]</a>    <span class="k">def</span> <span class="nf">x_mirror</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.Transformation</span> <span class="k">import</span> <span class="n">Transformation2D</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Transformation2D</span><span class="o">.</span><span class="n">XReflection</span><span class="p">(),</span> <span class="n">clone</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Primitive.y_mirror"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.y_mirror">[docs]</a>    <span class="k">def</span> <span class="nf">y_mirror</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.Transformation</span> <span class="k">import</span> <span class="n">Transformation2D</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Transformation2D</span><span class="o">.</span><span class="n">YReflection</span><span class="p">(),</span> <span class="n">clone</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Primitive.rotate"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.rotate">[docs]</a>    <span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.Transformation</span> <span class="k">import</span> <span class="n">Transformation2D</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Transformation2D</span><span class="o">.</span><span class="n">Rotation</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">clone</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Primitive.scale"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Primitive.html#Patro.GeometryEngine.Primitive.Primitive.scale">[docs]</a>    <span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_factor</span><span class="p">,</span> <span class="n">y_factor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.Transformation</span> <span class="k">import</span> <span class="n">Transformation2D</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Transformation2D</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">x_factor</span><span class="p">,</span> <span class="n">y_factor</span><span class="p">),</span> <span class="n">clone</span><span class="p">)</span></div>
 
     <span class="c1">##############################################</span>
 

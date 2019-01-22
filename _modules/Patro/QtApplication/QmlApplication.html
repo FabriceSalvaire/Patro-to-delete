@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -332,6 +333,7 @@
 <span class="kn">from</span> <span class="nn">QtShim.QtQuick</span> <span class="k">import</span> <span class="n">QQuickPaintedItem</span><span class="p">,</span> <span class="n">QQuickView</span>
 <span class="c1"># from QtShim.QtQuickControls2 import QQuickStyle</span>
 
+<span class="kn">from</span> <span class="nn">Patro.Common.Platform</span> <span class="k">import</span> <span class="n">QtPlatform</span>
 <span class="kn">from</span> <span class="nn">Patro.GraphicEngine.Painter.QtPainter</span> <span class="k">import</span> <span class="n">QtScene</span><span class="p">,</span> <span class="n">QtQuickPaintedSceneItem</span>
 
 <span class="kn">from</span> <span class="nn">.rcc</span> <span class="k">import</span> <span class="n">PatroRessource</span>
@@ -421,6 +423,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">QQmlApplicationEngine</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_qml_application</span> <span class="o">=</span> <span class="n">QmlApplication</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_platform</span> <span class="o">=</span> <span class="n">QtPlatform</span><span class="p">()</span>
+        <span class="c1"># self._logger.info(&#39;\n&#39; + str(self._platform))</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_scene</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="c1"># self._load_translation()</span>
@@ -445,6 +450,10 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">qml_application</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_qml_application</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">platform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_platform</span>
 
     <span class="c1">##############################################</span>
 

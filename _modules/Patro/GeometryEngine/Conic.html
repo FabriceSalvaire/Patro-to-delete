@@ -150,8 +150,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Math.html">9.1.1.6. Math</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Object.html">9.1.1.7. Object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Path.html">9.1.1.8. Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.9. Singleton</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.10. Xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Platform.html">9.1.1.9. Platform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Singleton.html">9.1.1.10. Singleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/Patro/Common/Xml.html">9.1.1.11. Xml</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/Patro/Config.html">9.1.2. Config</a><ul>
@@ -575,6 +576,19 @@
 
     <span class="c1">##############################################</span>
 
+<div class="viewcode-block" id="Circle2D.clone"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Circle2D.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_center</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="p">)</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Circle2D.apply_transformation"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Circle2D.apply_transformation">[docs]</a>    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_center</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_center</span>
+        <span class="c1"># Fixme: shear -&gt; ellipse</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span></div>
+
+    <span class="c1">##############################################</span>
+
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">(</span><span class="si">{1._center}</span><span class="s1">, </span><span class="si">{1._radius}</span><span class="s1">, </span><span class="si">{1._domain}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 
@@ -622,7 +636,6 @@
 
 <div class="viewcode-block" id="Circle2D.point_at_angle"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Circle2D.point_at_angle">[docs]</a>    <span class="k">def</span> <span class="nf">point_at_angle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__vector_cls__</span><span class="o">.</span><span class="n">from_polar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_radius</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_center</span></div>
-
 
     <span class="c1">##############################################</span>
 
@@ -900,6 +913,24 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">domain</span> <span class="o">=</span> <span class="n">domain</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Ellipse2D.clone"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Ellipse2D.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_center</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_x_radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_y_radius</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_angle</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_domain</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="c1">##############################################</span>
+
+<div class="viewcode-block" id="Ellipse2D.apply_transformation"><a class="viewcode-back" href="../../../api/Patro/GeometryEngine/Conic.html#Patro.GeometryEngine.Conic.Ellipse2D.apply_transformation">[docs]</a>    <span class="k">def</span> <span class="nf">apply_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transformation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_center</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_center</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_x_radius</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_y_radius</span> <span class="o">=</span> <span class="n">transformation</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_y_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bounding_box</span> <span class="o">=</span> <span class="kc">None</span></div>
 
     <span class="c1">##############################################</span>
 
