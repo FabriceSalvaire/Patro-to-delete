@@ -4,6 +4,7 @@
 ========
 
 .. toctree::
+    Common/ArgparseAction
     Common/AtomicCounter
     Common/Datetime
     Common/Graph

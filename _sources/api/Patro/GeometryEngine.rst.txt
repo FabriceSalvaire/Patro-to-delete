@@ -9,6 +9,7 @@
     GeometryEngine/Conic
     GeometryEngine/Interpolation
     GeometryEngine/Line
+    GeometryEngine/Mixin
     GeometryEngine/Path
     GeometryEngine/Polygon
     GeometryEngine/Polyline
