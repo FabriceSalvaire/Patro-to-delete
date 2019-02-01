@@ -1,4 +1,4 @@
-.. include:: ../../abbreviation.txt
+.. include:: /abbreviation.txt
 
 .. _geometry-ressources-page:
 
@@ -14,5 +14,7 @@ Contents:
   :maxdepth: 2
 
   bezier.rst
+  conic.rst
+  path.rst
   spline.rst
   transformations.rst
