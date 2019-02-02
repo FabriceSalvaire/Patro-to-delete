@@ -16,6 +16,7 @@
     GeometryEngine/Primitive
     GeometryEngine/Rectangle
     GeometryEngine/Segment
+    GeometryEngine/Shape
     GeometryEngine/Spline
     GeometryEngine/Transformation
     GeometryEngine/Triangle

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.2.4. Spline Curves &mdash; Patro 0.3.0 documentation</title>
+  <title>9.2.5. Spline Curves &mdash; Patro 0.3.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.2.5. Transformations" href="transformations.html" />
-    <link rel="prev" title="9.2.3. Path" href="path.html" /> 
+    <link rel="next" title="9.2.6. Transformations" href="transformations.html" />
+    <link rel="prev" title="9.2.4. Polygon" href="polygon.html" /> 
 
   
   <script src="../../static/js/modernizr.min.js"></script>
@@ -190,15 +190,20 @@
 <li class="toctree-l4"><a class="reference internal" href="path.html#bulge">9.2.3.1. Bulge</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">9.2.4. Spline Curves</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#references">9.2.4.1. References</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#b-spline-basis">9.2.4.2. B-spline Basis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#b-spline-curve">9.2.4.3. B-spline Curve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#algorithms-for-b-spline-curves">9.2.4.4. Algorithms for B-spline curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="polygon.html">9.2.4. Polygon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="polygon.html#area-and-barycenter">9.2.4.1. Area and Barycenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="polygon.html#moments-of-inertia">9.2.4.2. Moments of Inertia</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="transformations.html">9.2.5. Transformations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="transformations.html#transformation-matrices">9.2.5.1. Transformation matrices</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">9.2.5. Spline Curves</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#references">9.2.5.1. References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-spline-basis">9.2.5.2. B-spline Basis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#b-spline-curve">9.2.5.3. B-spline Curve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#algorithms-for-b-spline-curves">9.2.5.4. Algorithms for B-spline curves</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="transformations.html">9.2.6. Transformations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="transformations.html#transformation-matrices">9.2.6.1. Transformation matrices</a></li>
 </ul>
 </li>
 </ul>
@@ -294,8 +299,16 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../how-to-refer.html">12. How to Refer to Patro ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../donate.html">13. How to Help Further ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../related-projects.html">14. Related Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">15. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../related-projects.html">14. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../related-projects.html#pattern-making">14.1. Pattern Making</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../related-projects.html#embroidery">14.2. Embroidery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../related-projects.html#geometry-engine">14.3. Geometry Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">15. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography.html#geometry-engine">15.1. Geometry Engine</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -345,7 +358,7 @@
         
           <li><a href="index.html">9.2. Geometry Resources</a> &raquo;</li>
         
-      <li>9.2.4. Spline Curves</li>
+      <li>9.2.5. Spline Curves</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -365,7 +378,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="spline-curves">
-<span id="spline-geometry-ressources-page"></span><h1>9.2.4. Spline Curves<a class="headerlink" href="#spline-curves" title="Permalink to this headline">¶</a></h1>
+<span id="spline-geometry-ressources-page"></span><h1>9.2.5. Spline Curves<a class="headerlink" href="#spline-curves" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#references" id="id1">References</a></li>
@@ -380,14 +393,14 @@
 </ul>
 </div>
 <div class="section" id="references">
-<h2><a class="toc-backref" href="#id1">9.2.4.1. References</a><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">9.2.5.1. References</a><a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Computer Graphics, Principle and Practice, Foley et al., Adison Wesley</li>
 <li><a class="reference external" href="http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node15.html">http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node15.html</a></li>
 </ul>
 </div>
 <div class="section" id="b-spline-basis">
-<h2><a class="toc-backref" href="#id2">9.2.4.2. B-spline Basis</a><a class="headerlink" href="#b-spline-basis" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">9.2.5.2. B-spline Basis</a><a class="headerlink" href="#b-spline-basis" title="Permalink to this headline">¶</a></h2>
 <p>A nonuniform, nonrational B-spline of order <cite>k</cite> is a piecewise polynomial function of degree
 <span class="math notranslate nohighlight">\(k - 1\)</span> in a variable <cite>t</cite>.</p>
 <p>A set of non-descending breaking points, called knot, <span class="math notranslate nohighlight">\(t_0 \le t_1 \le \ldots \le t_m\)</span> defines
@@ -427,7 +440,7 @@ predecessor, the knot vector and the corresponding B-splines are called “unifo
 </ul>
 </div>
 <div class="section" id="b-spline-curve">
-<h2><a class="toc-backref" href="#id3">9.2.4.3. B-spline Curve</a><a class="headerlink" href="#b-spline-curve" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">9.2.5.3. B-spline Curve</a><a class="headerlink" href="#b-spline-curve" title="Permalink to this headline">¶</a></h2>
 <p>A B-spline curve of order <cite>k</cite> is defined as a linear combination of control points <span class="math notranslate nohighlight">\(p_i\)</span> and
 B-spline basis functions <span class="math notranslate nohighlight">\(B_i^k(t)\)</span> given by</p>
 <div class="math notranslate nohighlight">
@@ -477,9 +490,9 @@ knots and the end knots repeated <cite>k</cite> times.  The knot vector is thus<
 <p>where <span class="math notranslate nohighlight">\(n+k+1 = 2k\)</span> or <span class="math notranslate nohighlight">\(n = k-1\)</span>.</p>
 </div>
 <div class="section" id="algorithms-for-b-spline-curves">
-<h2><a class="toc-backref" href="#id4">9.2.4.4. Algorithms for B-spline curves</a><a class="headerlink" href="#algorithms-for-b-spline-curves" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">9.2.5.4. Algorithms for B-spline curves</a><a class="headerlink" href="#algorithms-for-b-spline-curves" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="evaluation-and-subdivision-algorithm">
-<h3><a class="toc-backref" href="#id5">9.2.4.4.1. Evaluation and subdivision algorithm</a><a class="headerlink" href="#evaluation-and-subdivision-algorithm" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">9.2.5.4.1. Evaluation and subdivision algorithm</a><a class="headerlink" href="#evaluation-and-subdivision-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>A B-spline curve can be evaluated at a specific parameter value <cite>t</cite> using the de Boor algorithm,
 which is a generalization of the de Casteljau algorithm.  The repeated substitution of the recursive
 definition of the B-spline basis function into the previous definition and re-indexing leads to the
@@ -498,7 +511,7 @@ t_{l+1}]\)</span>, and <span class="math notranslate nohighlight">\(p_l^{k-1}\)<
 permits the subdivision of the B-spline curve into two segments of the same order.</p>
 </div>
 <div class="section" id="de-boor-algorithm">
-<h3><a class="toc-backref" href="#id6">9.2.4.4.2. De Boor Algorithm</a><a class="headerlink" href="#de-boor-algorithm" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">9.2.5.4.2. De Boor Algorithm</a><a class="headerlink" href="#de-boor-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Let the index <cite>l</cite> define the knot interval that contains the position, <span class="math notranslate nohighlight">\(t \in [t_l ,
 t_{l+1}]\)</span>.  We can see in the recursion formula that only B-splines with <span class="math notranslate nohighlight">\(i = l-K, \dots, l\)</span>
 are non-zero for this knot interval, where <span class="math notranslate nohighlight">\(K = k - 1\)</span> is the degree.  Thus, the sum is
@@ -517,7 +530,7 @@ with the Cox-de Boor recursion formula, because it does not compute terms which 
 multiplied by zero.</p>
 </div>
 <div class="section" id="knot-insertion">
-<h3><a class="toc-backref" href="#id7">9.2.4.4.3. Knot insertion</a><a class="headerlink" href="#knot-insertion" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">9.2.5.4.3. Knot insertion</a><a class="headerlink" href="#knot-insertion" title="Permalink to this headline">¶</a></h3>
 <p>A knot can be inserted into a B-spline curve without changing the
 geometry of the curve.  The new curve is identical to</p>
 <div class="math notranslate nohighlight">
@@ -560,10 +573,10 @@ until the multiplicity of each internal knot is equal to <cite>k</cite>.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="transformations.html" class="btn btn-neutral float-right" title="9.2.5. Transformations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="transformations.html" class="btn btn-neutral float-right" title="9.2.6. Transformations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="path.html" class="btn btn-neutral" title="9.2.3. Path" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="polygon.html" class="btn btn-neutral" title="9.2.4. Polygon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
