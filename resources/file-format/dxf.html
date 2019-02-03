@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.1.2. SVG File Format" href="svg.html" />
+    <link rel="next" title="9.1.2. DXF ASTM File Format" href="dxf-astm.html" />
     <link rel="prev" title="9.1. File Formats" href="index.html" /> 
 
   
@@ -155,39 +155,57 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">9. Resources</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">9.1. File Formats</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">9.1.1. DXF File Format</a></li>
-<li class="toctree-l3"><a class="reference internal" href="svg.html">9.1.2. SVG File Format</a></li>
-<li class="toctree-l3"><a class="reference internal" href="valentina.html">9.1.3. Valentina File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dxf-astm.html">9.1.2. DXF ASTM File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="svg.html">9.1.3. SVG File Format</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="svg.html#reference-documentations">9.1.3.1. Reference Documentations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="svg.html#svg-coordinate-system">9.1.3.2. SVG Coordinate System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="svg.html#inkscape-software">9.1.3.3. Inkscape Software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="valentina.html">9.1.4. Valentina File Format</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../geometry/index.html">9.2. Geometry Resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../geometry/bezier.html">9.2.1. Bézier Curves</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#definitions">9.2.1.1. Definitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#linear-bezier-curves">9.2.1.2. Linear Bézier Curves</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#quadratic-bezier-curves">9.2.1.3. Quadratic Bézier Curves</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#cubic-bezier-curves">9.2.1.4. Cubic Bézier Curves</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#recursive-definition">9.2.1.5. Recursive definition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#degree-elevation">9.2.1.6. Degree elevation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#matrix-forms">9.2.1.7. Matrix Forms</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#symbolic-calculation">9.2.1.8. Symbolic Calculation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#curve-length">9.2.1.9. Curve Length</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#determine-the-curve-flatness">9.2.1.10. Determine the curve flatness</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#intersection-of-bezier-curve-with-a-line">9.2.1.11. Intersection of Bézier Curve with a Line</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#closest-point">9.2.1.12. Closest Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#valentina-requirements">9.2.1.1. Valentina Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#definitions">9.2.1.2. Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#linear-bezier-curves">9.2.1.3. Linear Bézier Curves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#quadratic-bezier-curves">9.2.1.4. Quadratic Bézier Curves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#cubic-bezier-curves">9.2.1.5. Cubic Bézier Curves</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#recursive-definition">9.2.1.6. Recursive definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#degree-elevation">9.2.1.7. Degree elevation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#matrix-forms">9.2.1.8. Matrix Forms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#symbolic-calculation">9.2.1.9. Symbolic Calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#curve-length">9.2.1.10. Curve Length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#determine-the-curve-flatness">9.2.1.11. Determine the curve flatness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#intersection-of-bezier-curve-with-a-line">9.2.1.12. Intersection of Bézier Curve with a Line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/bezier.html#closest-point">9.2.1.13. Closest Point</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../geometry/path.html">9.2.2. Path</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/path.html#bulge">9.2.2.1. Bulge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/conic.html">9.2.2. Conic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/conic.html#valentina-requirements">9.2.2.1. Valentina Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/conic.html#circle">9.2.2.2. Circle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/conic.html#ellipse">9.2.2.3. Ellipse</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../geometry/spline.html">9.2.3. Spline Curves</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#references">9.2.3.1. References</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#b-spline-basis">9.2.3.2. B-spline Basis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#b-spline-curve">9.2.3.3. B-spline Curve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#algorithms-for-b-spline-curves">9.2.3.4. Algorithms for B-spline curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/path.html">9.2.3. Path</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/path.html#bulge">9.2.3.1. Bulge</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../geometry/transformations.html">9.2.4. Transformations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../geometry/transformations.html#transformation-matrices">9.2.4.1. Transformation matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/polygon.html">9.2.4. Polygon</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/polygon.html#area-and-barycenter">9.2.4.1. Area and Barycenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/polygon.html#moments-of-inertia">9.2.4.2. Moments of Inertia</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/spline.html">9.2.5. Spline Curves</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#references">9.2.5.1. References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#b-spline-basis">9.2.5.2. B-spline Basis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#b-spline-curve">9.2.5.3. B-spline Curve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/spline.html#algorithms-for-b-spline-curves">9.2.5.4. Algorithms for B-spline curves</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/transformations.html">9.2.6. Transformations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../geometry/transformations.html#transformation-matrices">9.2.6.1. Transformation matrices</a></li>
 </ul>
 </li>
 </ul>
@@ -234,12 +252,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Primitive.html">10.1.4.10. Primitive</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Rectangle.html">10.1.4.11. Rectangle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Segment.html">10.1.4.12. Segment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Spline.html">10.1.4.13. Spline</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Transformation.html">10.1.4.14. Transformation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Triangle.html">10.1.4.15. Triangle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Vector.html">10.1.4.16. Vector</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine.html#purpose">10.1.4.17. Purpose</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine.html#bibliographical-references">10.1.4.18. Bibliographical References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Shape.html">10.1.4.13. Shape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Spline.html">10.1.4.14. Spline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Transformation.html">10.1.4.15. Transformation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Triangle.html">10.1.4.16. Triangle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine/Vector.html">10.1.4.17. Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine.html#purpose">10.1.4.18. Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/Patro/GeometryEngine.html#bibliographical-references">10.1.4.19. Bibliographical References</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/Patro/GraphicEngine.html">10.1.5. GraphicEngine</a><ul>
@@ -283,8 +302,16 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../how-to-refer.html">12. How to Refer to Patro ?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../donate.html">13. How to Help Further ?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../related-projects.html">14. Related Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">15. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../related-projects.html">14. Related Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../related-projects.html#pattern-making">14.1. Pattern Making</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../related-projects.html#embroidery">14.2. Embroidery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../related-projects.html#geometry-engine">14.3. Geometry Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">15. Bibliography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../bibliography.html#geometry-engine">15.1. Geometry Engine</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -365,7 +392,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="svg.html" class="btn btn-neutral float-right" title="9.1.2. SVG File Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dxf-astm.html" class="btn btn-neutral float-right" title="9.1.2. DXF ASTM File Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="9.1. File Formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
